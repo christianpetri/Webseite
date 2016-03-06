@@ -84,16 +84,19 @@ div.fixedbottom {
 }
 /** CSS Game*/
 .gamecanvas{
-	margin:auto;
+	
 	height:200px;
-	width:500px;
+	width:400px;
+	position: relative;
+	margin:auto;
 	background-color:green;	
-
+	
 }
 
 .block{
-	position: relative;
-	height:10px;
+	position: absolute !important;
+	bottom: 0px;
+	height:30px;
 	width:10px;
 	background-color:blue;
 }

@@ -16,7 +16,7 @@ $(document).keydown(function(key) {
 		
 			if (key.keyCode === 32) {
 				 space = true;
-				 $( ".block" ).animate({ "right": "-=10px" }, "slow" );
+				 $( ".block" ).animate({ "top": "-=30px" }, "slow" );
 			}
 						
 			if(space===true){score+=1;
@@ -31,7 +31,7 @@ $(document).keyup(function(key) {
 			var space = false;
 			if (key.keyCode === 32) {
 				 space = false;
-				 $( ".block" ).animate({ "right": "+=10px" }, "slow" );
+				 $( ".block" ).animate({ "top": "+=30px" }, "slow" );
 			}
 			
 });
