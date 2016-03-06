@@ -85,8 +85,8 @@ div.fixedbottom {
 /** CSS Game*/
 .gamecanvas{
 	
-	height:200px;
-	width:400px;
+	height:200px; 
+	width:500px;
 	position: relative;
 	margin:auto;
 	background-color:green;	
