@@ -1,11 +1,15 @@
 #navi {
-  background-color: skyblue;
   float: top;
-  height: 20px;
-  padding: 5px 0px 5px 5px;
+  background-color: skyblue;
+  padding-top: 5px;
+  padding-bottom:5px;
+  padding-left:5px;
+  margin: auto;
+  width: 795px;
 }
 
 body {
+  padding-top:10px;
   width: 800px;
   margin: auto;
   background-color: #F0F8FF;
@@ -29,6 +33,52 @@ input[type=text]:hover {
   border: 2px solid #ccc;
   border-radius: 4px;
   overflow: hidden;
+  background-color:lightgrey;
 }
 
-.list {}
+.button{
+
+}
+
+#menu{}
+
+.button2{
+	
+}
+
+.nachricht{
+
+}
+
+.box{
+	width:auto;
+	height:1000px;
+	
+
+}
+
+.topheight{
+	height:10px;	
+}
+
+div.fixedtop {
+	position: fixed;
+    top: 0;    
+}
+
+div.fixedbottom {
+    position: fixed;
+	padding-left: 3px;
+	padding-right: 3px;
+	bottom: 0px;
+    left: 0px;
+    width: auto;
+    border: 3px;
+	background-color:grey;
+}
+
+
+
+
+@media (max-width: 1500px){
+}
