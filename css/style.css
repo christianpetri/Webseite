@@ -90,3 +90,11 @@ div.fixedbottom {
 	background-color:green;	
 
 }
+
+.block{
+	position: relative;
+	height:10px;
+	width:10px;
+	background-color:blue;
+}
+.highScoreText{}
