@@ -33,18 +33,17 @@ input[type=text]:hover {
   border: 2px solid #ccc;
   border-radius: 4px;
   overflow: hidden;
+  background-color:lightgrey;
 }
 
 .button{
-	
-	
 
 }
 
-.button2{
+#menu{}
 
+.button2{
 	
-	background-color: green;
 }
 
 .nachricht{
@@ -52,14 +51,14 @@ input[type=text]:hover {
 }
 
 .box{
-	
+	width:auto;
 	height:1000px;
-	background-color: green;
+	
 
 }
 
-.nachrichtAbgeschickt{
-	
+.topheight{
+	height:10px;	
 }
 
 div.fixedtop {
@@ -78,8 +77,8 @@ div.fixedbottom {
 	background-color:grey;
 }
 
-.topheight{
-	height:10px;	
-}
-.body {
+
+
+
+@media (max-width: 1500px){
 }
