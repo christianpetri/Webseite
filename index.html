@@ -1,5 +1,5 @@
 <!DOCTYPE Html>
-
+<html>
 <head>
   <title>Kontaktformular zur Berwerbung des Berufs X</title>
   <link href="css/style.css" type="text/css" rel="stylesheet">
@@ -27,16 +27,16 @@
     <from name="dataNachricht">
     Vorname:
     <br/>
-    <input placeholder="Vorname" type="text" name="fname" />
+    <input placeholder="Vorname" type="text" name="fname" required/>
     <br/> Nachname:
     <br/>
-    <input placeholder="Nachname" type="text" name="lname" />
+    <input placeholder="Nachname" type="text" name="lname" required/>
     <br/> Nachricht:
     <br/>
-    <textarea rows="5" cols="40" placeholder="Nachricht" type="text" name="nachricht" height="5000px"></textarea>
+    <textarea rows="5" cols="40" placeholder="Nachricht" type="text" name="nachricht" height="5000px" required></textarea>
     <br/>
     <!--Abschicken Knopf-->
-    <input type="submit" value="Abschicken" />
+    <input class="button" type="submit" value="Abschicken" />
 
   </from>
   <div class="list"></div>

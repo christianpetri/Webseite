@@ -1,8 +1,9 @@
 $(document).ready(function() {
 
-  var fname = $('input[name=dataNachricht]').val();
-  var lname = $('input[name=dataNachricht]').val();
-  var nachricht = $('input[name=dataNachricht]').val();
-  $(".item").append('<div class="item">' + fname + '</div>');
-
+	$(".button").click(function(){
+  		var fname = $('input[name=fname]').val();
+  		var lname = $('input[name=lname]').val();
+  		var nachricht = $('textarea[name=nachricht]').val();
+  		$(".list").append('<div class="item">'+"<br/>" + fname +" "+ lname + "<br/>" + " Nachricht: " + nachricht + "<br/>"+'</div>');
+});
 });
