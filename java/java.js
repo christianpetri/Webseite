@@ -1,6 +1,14 @@
 $(document).ready(function() {
 	
 	"use strict";
+	/**NavMenu item Anfang*/
+	$("#menu").append(	'<a href="index.html">'+'Home'+'</a>'+' '+
+						'<a href="galerie.html">'+'Galerie'+'</a>'+' '+
+						'<a href="jump.html">'+'Jump'+'</a>'+
+						'<div class="fixedbottom">'+'<a href="#top">'+"Zum Seiten-Anfang"+'</a>'+'</div>'
+	
+	);
+	/**NavMenu item Ende*/
 	
 	
 	/**Nachrichten Fromular Start*/

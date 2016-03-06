@@ -40,21 +40,22 @@ input[type=text]:hover {
 
 }
 
-#menu{}
-
 .button2{
 	
 }
+#menu{}
 
 .nachricht{
 
 }
 
-.box{
-	width:auto;
+.boxblue{
+	content:normal;
+	width:300px;
+	margin:auto;
 	height:1000px;
+	background-color:lightblue;
 	
-
 }
 
 .topheight{
@@ -79,6 +80,13 @@ div.fixedbottom {
 
 
 
-
 @media (max-width: 1500px){
+}
+/** CSS Game*/
+.gamecanvas{
+	margin:auto;
+	height:200px;
+	width:500px;
+	background-color:green;	
+
 }
