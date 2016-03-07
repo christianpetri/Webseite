@@ -1,43 +1,48 @@
 var score = 0, highScore=0, highScoreText=0;
-var cactus = 0,x = 0,catusHeight=0;
+var cactus = 0,x = 0,catusHeight=0,cactusupdown=1;
 var dino = 0,ydino=0;
 var space = false;
 
+
+
 $(document).ready(function(){
 	"use strict";
-	if(highScore===0){highScoreText="";}else{highScoreText="Highscore: "+ highScore;}
-	if(score>=6){
-			highScore=score;
-			}
-	x=$(".block").position(); 
-	/**x.top=Math.floor(x.top);*/
-	$(".highScoreText").append("Score: "+ score);
-	$(".highScoreText").append("<br/>"+" top: "+ x.top +" left: "+x.left);
-	$(".highScoreText").append("<br/>"+"catusHeight: "+ catusHeight);
-	//** $(document).keyup(function(evt) {
-	//**    if (evt.keyCode == 32) {
-	//**      space = false;
-	//**    }
-	 //** }).keydown(function(evt) {
-	 //**   if (evt.keyCode == 32) {
-	//**      space = true;
-	//**    }
-	//**  });
-	//**}
-	if(space===false){catusHeight=0;}
-	if(score>highScore){highScore=score;}
+	setInterval(function(){
+			$(".highScoreText").empty();
+			if(score>highScore){highScore=score;}
+			$(".highScoreText").append("Score: "+ score);
+			$(".highScoreText").append(" Highscore: "+ highScore);  
+			$(".highScoreText").append("<br/>"+"catusHeight: "+ catusHeight);
+			x=$(".block").position(); 
+			x.top=Math.floor(x.top);
+			$(".highScoreText").append("<br/>"+" top: "+ x.top +" left: "+x.left);
+			cactus=$(".block").position(); 
+			 
+			$(".highScoreText").append("<br/>"+"catus.top: "+ cactus.top);
+			if(catusHeight===39||catusHeight>40){cactusupdown=-1;}
+			if(catusHeight===0||catusHeight<0){cactusupdown=1;}
+			catusHeight+=cactusupdown;
+			ydino+=1;
+			if(ydino>500){ydino=0;}
+			$(".block").css("bottom", catusHeight);
+			$(".blockcactus").css("right", ydino);
+	}, 20);
+		
 
-	$(".highScoreText").empty();
-	$(".highScoreText").append("Score: "+ score);
-	$(".highScoreText").append(" Highscore: "+ highScore);
-
-	x=$(".block").position(); 
-	/**x.top=Math.floor(x.top);*/
-	$(".highScoreText").append("<br/>"+" top: "+ x.top +" left: "+x.left);
-	$(".highScoreText").append("<br/>"+"catusHeight: "+ catusHeight);
+			 
+		
+		
+		
+		
+		
 	
 		
-						
+	
+		x=$(".block").position(); 
+		/**x.top=Math.floor(x.top);*/
+		$(".highScoreText").append("<br/>"+" top: "+ x.top +" left: "+x.left);
+		$(".highScoreText").append("<br/>"+"catusHeight: "+ catusHeight);
+		
 		
  
 });
@@ -53,9 +58,9 @@ $(document).keydown(function(key) {
 		$(".highScoreText").append("Score: "+ score);
 		if(space===true){
 			score+=1;
-			catusHeight+=10;
-			$(".block").css("bottom", catusHeight);
-		}								
+			
+		}
+										
 	}
 }).keyup(function(key){
 	"use strict";
@@ -64,7 +69,7 @@ $(document).keydown(function(key) {
 		 space = false;
 		 /**$( ".block" ).animate({ "top": "+=30px" }, "slow" );*/
 		 $(".block").css("background-color", "blue");
-		  catusHeight=0;
+		  
 	}
 			
 });
