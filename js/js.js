@@ -1,6 +1,9 @@
-$(document).ready(function() {
 	
+
+$(document).ready(function() {
 	"use strict";
+
+	 
 	/**NavMenu item Anfang*/
 	$("#menu").append(	'<a href="index.html">'+'Home'+'</a>'+' '+
 						'<a href="galerie.html">'+'Galerie'+'</a>'+' '+
