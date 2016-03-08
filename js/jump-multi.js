@@ -63,9 +63,9 @@ $(document).ready(function(){
 				}
 				//** If catus and dino are in the same place, end game*/
 				if(dinoHeight<10){ 
-					if(cactus .left<10&&cactus .left>0){stop=true;}
-					if(cactus1.left<10&&cactus1.left>0){stop=true;}
-					if(cactus2.left<10&&cactus2.left>0){stop=true;}			
+					if(cactus .left<25&&cactus .left>15){stop=true;}
+					if(cactus1.left<25&&cactus1.left>15){stop=true;}
+					if(cactus2.left<25&&cactus2.left>15){stop=true;}			
 				}
 				if(stop){  
 							start=false; 

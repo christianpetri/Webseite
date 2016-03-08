@@ -112,6 +112,7 @@ div.fixedbottom {
 	bottom: 0px;
 	height:30px;
 	width:10px;
+	left:15px;
 	background-color:blue;
 }
 .containerText{
