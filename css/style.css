@@ -1,3 +1,11 @@
+body {
+  padding-top:10px;
+  width: 100%;
+  max-width:800px;
+  margin: auto;
+  background-color: #F0F8FF;
+}
+
 #navi {
   float: top;
   background-color: skyblue;
@@ -7,13 +15,8 @@
   margin: auto;
   width: 795px;
 }
+img{width:100%;}
 
-body {
-  padding-top:10px;
-  width: 800px;
-  margin: auto;
-  background-color: #F0F8FF;
-}
 
 table {
   border: 1;
@@ -51,7 +54,8 @@ input[type=text]:hover {
 
 .boxblue{
 	content:normal;
-	width:300px;
+	max-width:300px;
+	width:50%;
 	margin:auto;
 	height:1000px;
 	background-color:lightblue;
