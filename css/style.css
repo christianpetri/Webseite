@@ -82,14 +82,14 @@ div.fixedbottom {
 	position:absolute;
 	width:100px;
 	left:-100px;
-	background-color:lightgrey;
+	background-color:#F0F8FF;
 	height:200px;
 }
 .right{
 	position:absolute;
-	width:100px;
-	right:-100px;
-	background-color:lightgrey;
+	width:200px;
+	right:-200px;
+	background-color:#F0F8FF;
 	height:200px;
 }
 
@@ -114,18 +114,33 @@ div.fixedbottom {
 	width:10px;
 	background-color:blue;
 }
-.highScoreText{
-	padding-left:500px;
+.containerText{
 	height:20px;
+	width:700px;
+	position: relative;
+	 
+}
+.scoreText{
+	position: absolute;
+	left:490px;
+	height:20px;
+	width:100px;
+	 
+}
+.highScoreText{
+	position: absolute;
+	left:560px;
+	height:20px;
+	width:200px;
 	
-	}
+}
 .blockcactus{
 	position: absolute;
 	bottom:0px;
 	right:-20px;
 	height:20px;
 	width:20px;
-	background-color:grey;
+	background-color:green;
 	
 	}
 .blockcactus1{
@@ -134,7 +149,7 @@ div.fixedbottom {
 	right:-20px;
 	height:20px;
 	width:20px;
-	background-color:yellow;
+	background-color:green;
 	 
 	
 	}
@@ -148,3 +163,4 @@ div.fixedbottom {
 	 
 	
 	}
+	.VarValue{padding-left:150px;}

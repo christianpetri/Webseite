@@ -1,24 +1,30 @@
 var score = 0, highScore=0;
 var x = 0,dinoHeight=0,dinoUpDown=1;
-var cactus  = 0, cactusPosition  =-20,d=-2;
-var cactus1 = 0, cactusPosition1 =-20,d1=150;
-var cactus2 = 0, cactusPosition2 =-20,d2=120; 
+var cactus  = 0, cactusPosition  =-20;
+var cactus1 = 0, cactusPosition1 =-20;
+var cactus2 = 0, cactusPosition2 =-20; 
 var space = false;
 var spacebar = 0;
 var t = 0; 
 var start = 0;
 var stop=false;
+var speed=1;
 
 $(document).ready(function(){
 	"use strict";
 	setInterval(function(){
 		if(start){ 	
 				/**display text in the upper right corner*/
-			 	$(".highScoreText").empty();
+			
 				$(".VarValue").empty();
 				if(score>highScore){highScore=Math.floor(score);}
-				$(".highScoreText").append("Score: "+ Math.floor(score)+"    ");
+				$(".scoreText").empty();
+				$(".scoreText").append("Score: "+ Math.floor(score) );
+				$(".highScoreText").empty();
 				$(".highScoreText").append("Highscore: "+ highScore);  
+				
+				//make game more difficult
+				 speed+= 0.0001;
 				
 				//*count up /score*/
 				score+=0.01;
@@ -31,21 +37,19 @@ $(document).ready(function(){
 				cactus1=$(".blockcactus1").position();
 				cactus2=$(".blockcactus2").position();
 				/**move catus from right to left count up*/ 
-				if(Math.abs(cactusPosition-cactusPosition2 )>=0 )	{cactusPosition 	+=1; }
-				if(Math.abs(cactusPosition-cactusPosition1 )>170)	{cactusPosition1	+=1; }
-				if(Math.abs(cactusPosition1-cactusPosition2)>170)	{cactusPosition2	+=1; }
-				
-				$(".VarValue").append(Math.abs(cactusPosition-cactusPosition2 ) +">"+d);
-				$(".VarValue").append("     "+ cactusPosition +"     "+ cactusPosition2 );
+				if(Math.abs(cactusPosition-cactusPosition2 )>=0 )	{cactusPosition 	+=speed; }
+				if(Math.abs(cactusPosition-cactusPosition1 )>170)	{cactusPosition1	+=speed; }
+				if(Math.abs(cactusPosition1-cactusPosition2)>170)	{cactusPosition2	+=speed; }
+				//$(".VarValue").append("     "+ cactusPosition +"     "+ cactusPosition2 );
 				/**Place catus and create the movement*/
 				$(".blockcactus").css("right", 	cactusPosition	);  
 				$(".blockcactus1").css("right", cactusPosition1	);  
 				$(".blockcactus2").css("right", cactusPosition2	);  
 				
 				/**if cactus is of the far left, reset is to right position*/
-				if(cactusPosition    > 520){cactusPosition  = -20;	d =Math.floor((Math.random()*5))*20+10;}
-				if((cactusPosition1) > 520){cactusPosition1 = -20;	d1=Math.floor((Math.random()*5))*20+10;}
-				if((cactusPosition2) > 520){cactusPosition2 = -20;	d2=Math.floor((Math.random()*5))*20+10;}
+				if(cactusPosition    > 520){cactusPosition  = -1*(Math.floor((Math.random()*8+1))*10+20);}
+				if((cactusPosition1) > 520){cactusPosition1 = -1*(Math.floor((Math.random()*8+1))*10+20);}
+				if((cactusPosition2) > 520){cactusPosition2 = -1*(Math.floor((Math.random()*8+1))*10+20);}
 				if(spacebar===1){
 					t+=1;
 					if(dinoHeight===0||dinoHeight<0){dinoUpDown=1;}
@@ -53,8 +57,9 @@ $(document).ready(function(){
 					dinoHeight+=dinoUpDown;
 					
 					if(t>77 ){t=0;spacebar=0;dinoHeight=0;} 
+					
 					$(".block").css("bottom", dinoHeight);
-					 
+										 
 				}
 				//** If catus and dino are in the same place, end game*/
 				if(dinoHeight<10){ 
@@ -64,18 +69,18 @@ $(document).ready(function(){
 				}
 				if(stop){  
 							start=false; 
+							$(".block").css("background-color", "tomato");
 						  	$(".highScoreText").empty();
-							$(".highScoreText").append("Score: "+ Math.floor(score)+"    ");
+							$(".scoreText").empty();
+							$(".scoreText").append("Score: "+ Math.floor(score) );
+							score=0;
 							$(".highScoreText").append("Highscore: "+ highScore); 
 							$(".VarValue").empty();
 							$(".VarValue").append("Press Spacebar to start again"); 
 							cactusPosition   =-20;
 							cactusPosition1  =-20;
 							cactusPosition2  =-20;
-							d =-2;
-							d1=150;
-							d2=200;
-							score=0; 
+							speed=1;
 							stop=false;
 				 }
 			 
@@ -91,7 +96,7 @@ $(document).keydown(function(key) {
 		space = true;
 		start=true;
 		spacebar=1; 
-		$(".block").css("background-color", "yellow"); 
+		 
 		
 													
 	}
