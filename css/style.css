@@ -169,3 +169,11 @@ div.fixedbottom {
 	
 	}
 	.VarValue{padding-left:150px;}
+	
+	.explode{
+	 position: relative;
+	 width:100px;
+	 height:100px;
+	 background-color:grey;
+	}
+	 

@@ -1,3 +1,5 @@
+//define all the Gloanl Vars
+
 var score = 0, highScore=0;
 var x = 0, dinoHeight=0, dinoUpDown=1;
 var cactus0 = 0, cactusPosition0  =-20;
@@ -8,13 +10,20 @@ var t = 0;
 var start = 0;
 var stopGame=false;
 var speed=1;
+var smallCubeClass=0;
+var smallCubeClassTimer=0;
+
+
+
+	
+//Game start
 
 $(document).ready(function(){
 	"use strict";
 	setInterval(function(){
 		if(start){ 	
 				displayScoreText();
-								
+				$(".block").show();				
 				//make game more difficult
 				 speed+= 0.0001;
 				
@@ -33,7 +42,14 @@ $(document).ready(function(){
 				//** If catus and dino are in the same place aka Dino touches cactus = End of Game/Dino dead*/
 				dinoKill();
 				
-			 
+				smallCubeClassTimer+=1;
+				if(smallCubeClassTimer>=100){smallCubeClassTimer=0;}
+				smallCubeClass=".smallCube"+smallCubeClassTimer;
+				console.log(".smallCube"+smallCubeClassTimer);
+				$(smallCubeClass).css("background-color","yellow");
+				
+				
+				
 		} 	 
 	}, 10 );
    
@@ -56,6 +72,7 @@ $(document).keydown(function(key) {
 	if (key.keyCode === 32) {
 		 	 
 			$(".block").css("background-color", "blue");
+			 
 		  start=true;
 	}
 			
@@ -97,10 +114,14 @@ function dinoKill(){
 					if(cactus1.left<25&&cactus1.left>15){stopGame=true;}
 					if(cactus2.left<25&&cactus2.left>15){stopGame=true;}			
 		}
+		
 		if(stopGame){  
-					endOfGame(stopGame);	
+					explodeDino();
+					endOfGame();	
 					stopGame=false;
+					 
 		}
+		
 }
 function getPositon(){
 	"use strict";
@@ -128,12 +149,11 @@ function moveAndResetPosition(){
 				$(".blockcactus1").css("right", cactusPosition1	);  
 				$(".blockcactus2").css("right", cactusPosition2	);
 }
-function endOfGame(stopGame){
+function endOfGame(){
 	"use strict"; 
-	console.log("Stop "+stopGame);
-	console.log("Start "+start);
-	$(".block").css("background-color", "tomato");
-	$(".block").effect('explode');
+	 $(".block").css("background-color", "tomato");
+	 
+	//$( "span,div" ).hide( "fast" ); 
 	$(".highScoreText").empty();
 	$(".scoreText").empty();
 	$(".scoreText").append("Score: "+ Math.floor(score) );
@@ -146,7 +166,31 @@ function endOfGame(stopGame){
 	cactusPosition2  =-20;
 	speed=1;
 	start=false; 
-	console.log("Stop Nachher "+stopGame);
-	console.log("Start Nachher "+start);
-
 }
+
+function explodeDino(){
+	"use strict"; 
+	
+	
+	}
+
+$(document).ready(function(){
+//generate 100 div with class .smallCube[i] (with height 10px widht 10px, positon absolute and top 0px)
+	for(var i=1;i<100;i++){
+		
+		var genrateSmallCubeClass=".smallCube"+[i];
+		$(".explode").append('<div class="smallCube'+[i]+'" position="absolute" top="0px">'+'</div>');
+		$(genrateSmallCubeClass).css({	
+					"position":"absolute",
+					"top":"0px",	
+					"width":"10px",
+					"height":"10px",
+					"background-color":"blue"
+				}
+		);		
+						
+	}
+
+});
+	
+	
