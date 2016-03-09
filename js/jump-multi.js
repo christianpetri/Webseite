@@ -22,6 +22,8 @@ $(document).ready(function(){
 	"use strict";
 	setInterval(function(){
 		if(start){ 	
+		
+				$(".block").show();
 				displayScoreText();
 				$(".block").show();				
 				//make game more difficult
@@ -42,12 +44,10 @@ $(document).ready(function(){
 				//** If catus and dino are in the same place aka Dino touches cactus = End of Game/Dino dead*/
 				dinoKill();
 				
-				smallCubeClassTimer+=1;
-				if(smallCubeClassTimer>=100){smallCubeClassTimer=0;}
-				smallCubeClass=".smallCube"+smallCubeClassTimer;
-				console.log(".smallCube"+smallCubeClassTimer);
-				$(smallCubeClass).css("background-color","yellow");
+				 
 				
+			
+		 		
 				
 				
 		} 	 
@@ -152,9 +152,10 @@ function moveAndResetPosition(){
 function endOfGame(){
 	"use strict"; 
 	 $(".block").css("background-color", "tomato");
+	 $(".block").hide();
 	 
-	//$( "span,div" ).hide( "fast" ); 
-	$(".highScoreText").empty();
+	 explodeDino();
+	 $(".highScoreText").empty();
 	$(".scoreText").empty();
 	$(".scoreText").append("Score: "+ Math.floor(score) );
 	score=0;
@@ -170,11 +171,45 @@ function endOfGame(){
 
 function explodeDino(){
 	"use strict"; 
-	
+	var randomNumberColor=Math.floor(Math.random()*255);
+				smallCubeClassTimer+=1;
+				 
+					if(smallCubeClassTimer>100){
+							for(var i=1;i<100;i++){
+						 
+								var genrateSmallCubeClass=".smallCube"+[i];
+									$(genrateSmallCubeClass).css({	
+												"position":"absolute",
+												"left":"0px",
+												"top" : "0px"	
+																			 
+									});
+						 
+							}
+						
+						smallCubeClassTimer=0;
+					}
+				smallCubeClass=".smallCube"+smallCubeClassTimer;
+				
+				var color="rgba("+255+","+0+","+randomNumberColor+","+1+")";
+				 
+				$(smallCubeClass).css("background-color",color);
+				  $(smallCubeClass).animate({
+    					 
+    					left: "+="+(Math.floor(Math.random()*1000)-500),
+						top: "-="+(Math.floor(Math.random()*300))
+   					  
+  					}, 500, function() {
+    					// Animation complete.
+  					});
+				//$(smallCubeClass).css("bottom",randomNumber+"px");
+				//$(smallCubeClass).css("top",randomNumber+"px");
+				
 	
 	}
 
 $(document).ready(function(){
+	"use strict"; 
 //generate 100 div with class .smallCube[i] (with height 10px widht 10px, positon absolute and top 0px)
 	for(var i=1;i<100;i++){
 		
@@ -182,7 +217,7 @@ $(document).ready(function(){
 		$(".explode").append('<div class="smallCube'+[i]+'" position="absolute" top="0px">'+'</div>');
 		$(genrateSmallCubeClass).css({	
 					"position":"absolute",
-					"top":"0px",	
+					"left":"0px",	
 					"width":"10px",
 					"height":"10px",
 					"background-color":"blue"

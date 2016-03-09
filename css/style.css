@@ -39,18 +39,7 @@ input[type=text]:hover {
   background-color:lightgrey;
 }
 
-.button{
 
-}
-
-.button2{
-	
-}
-#menu{}
-
-.nachricht{
-
-}
 
 .boxblue{
 	content:normal;
@@ -171,9 +160,11 @@ div.fixedbottom {
 	.VarValue{padding-left:150px;}
 	
 	.explode{
-	 position: relative;
-	 width:100px;
-	 height:100px;
-	 background-color:grey;
+	 position: absolute;
+	 bottom:0px;
+	 left:15px;
+	 width:10px;
+	 height:10px;
+	 /*background-color:grey;*/
 	}
 	 
