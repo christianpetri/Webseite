@@ -1,4 +1,14 @@
-//define all the Gloanl Vars
+$(document).keydown(function(key) {
+			
+	"use strict";	
+	if (key.keyCode === 32) {
+		start=true;
+		spacebar=1;
+		makeDinoExplode=false;										
+	}
+});
+
+//define all the Global Vars
 
 var score = 0, highScore=0;
 var x = 0, dinoHeight=0, dinoUpDown=1;
@@ -7,12 +17,13 @@ var cactus1 = 0, cactusPosition1  =-20;
 var cactus2 = 0, cactusPosition2  =-20; 
 var spacebar = false;
 var t = 0; 
-var start = 0;
+var start = false;
 var stopGame=false;
 var speed=1;
 var smallCubeClass=0;
 var smallCubeClassTimer=0;
-
+var makeDinoExplode=false;
+ 
 
 
 	
@@ -21,6 +32,24 @@ var smallCubeClassTimer=0;
 $(document).ready(function(){
 	"use strict";
 	setInterval(function(){
+		if(makeDinoExplode){
+			explodeDino();
+			for(var i=1;i<100;i++){
+						 
+								var genrateSmallCubeClass=".smallCube"+[i];
+									$(genrateSmallCubeClass).show();
+						 
+				}
+			
+			  	 
+		} else {
+			
+				for(var i=1;i<100;i++){
+						 
+								var genrateSmallCubeClass=".smallCube"+[i];
+									$(genrateSmallCubeClass).hide();
+						 
+				}
 		if(start){ 	
 		
 				$(".block").show();
@@ -44,41 +73,16 @@ $(document).ready(function(){
 				//** If catus and dino are in the same place aka Dino touches cactus = End of Game/Dino dead*/
 				dinoKill();
 				
-				 
-				
 			
-		 		
-				
-				
-		} 	 
+		} 
+		
+		}
 	}, 10 );
    
 });
 
-$(document).keydown(function(key) {
-			
-	"use strict";	
-	if (key.keyCode === 32) {
-		 
-		start=true;
-		spacebar=1; 
-		 
-		
-													
-	}
-}).keyup(function(key){
-	"use strict";
 
-	if (key.keyCode === 32) {
-		 	 
-			$(".block").css("background-color", "blue");
-			 
-		  start=true;
-	}
-			
-});
-
-
+ 
 
 function displayScoreText(){
 	"use strict";
@@ -116,13 +120,15 @@ function dinoKill(){
 		}
 		
 		if(stopGame){  
-					explodeDino();
-					endOfGame();	
+					
+					endOfGame();
 					stopGame=false;
+					makeDinoExplode=true;
 					 
 		}
 		
 }
+ 
 function getPositon(){
 	"use strict";
 		/**get the position of the block "top,left"*/
@@ -154,7 +160,8 @@ function endOfGame(){
 	 $(".block").css("background-color", "tomato");
 	 $(".block").hide();
 	 
-	 explodeDino();
+	 
+	 
 	 $(".highScoreText").empty();
 	$(".scoreText").empty();
 	$(".scoreText").append("Score: "+ Math.floor(score) );
@@ -208,6 +215,7 @@ function explodeDino(){
 	
 	}
 
+
 $(document).ready(function(){
 	"use strict"; 
 //generate 100 div with class .smallCube[i] (with height 10px widht 10px, positon absolute and top 0px)
@@ -220,7 +228,8 @@ $(document).ready(function(){
 					"left":"0px",	
 					"width":"10px",
 					"height":"10px",
-					"background-color":"blue"
+					"border-radius":"10px"
+					 
 				}
 		);		
 						
