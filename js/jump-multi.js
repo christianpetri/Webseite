@@ -148,15 +148,13 @@ function dinoKill(){
 					if(cactus0.left<30&&cactus0.left>15){stopGame=true;}
 					if(cactus1.left<30&&cactus1.left>15){stopGame=true;}
 					if(cactus2.left<30&&cactus2.left>15){stopGame=true;}
-					 
+					
 								
 		}
 		if(stopGame){  
 					makeDinoExplode=true;
 					endOfGame();
-					 
 					stopGame=false;
-					 
 					startGame=false;
 					
 					 
@@ -291,4 +289,12 @@ function hideExplosion(){
 	
 	}
 	
-	
+/**.container {
+  position: relative;
+}
+#clip {
+  position: absolute;
+  clip: rect(0, 100px, 200px, 0);
+  /* clip: shape(top, right, bottom, left); NB 'rect' is the only available option  
+  
+  } */
