@@ -4,9 +4,9 @@
 
 var score = 0, highScore=0;
 var x = 0, dinoHeight=0, dinoUpDown=1;
-var cactus0 = 0, cactusPosition0  =-20;
-var cactus1 = 0, cactusPosition1  =-20;
-var cactus2 = 0, cactusPosition2  =-20; 
+var cactus0 = 0, cactusPosition0  =-40;
+var cactus1 = 0, cactusPosition1  =-40;
+var cactus2 = 0, cactusPosition2  =-40; 
 var spacebar = false;
 var t = 0; 
 var startGame = false;
@@ -15,9 +15,10 @@ var speed=1;
 var smallCubeClass=0;
 var smallCubeClassTimer=0;
 var makeDinoExplode=false;
-
+var dinoWalk=0;
 $(document).keydown(function(key) {
-	"use strict";			
+	"use strict";	
+		
 		
 						if (key.keyCode === 32) {
 							startGame=true;
@@ -31,6 +32,7 @@ $(document).keydown(function(key) {
 $(document).ready(function(){
 	
 	"use strict";
+	$(".block").append('<img src="image/dino_Start.png" width="44" height="47"/>');	
 	document.onselectstart = function(){return false;};
     document.ondragstart = function(){return false;};
 
@@ -54,7 +56,8 @@ $(document).ready(function(){
 	
 				
 		if(startGame){ 	
-		
+				
+				dinoMove();
 				$(".block").show();
 				displayScoreText();
 						
@@ -93,7 +96,21 @@ $(document).ready(function(){
    
 });
 
-
+function dinoMove(){
+	"use strict";
+				dinoWalk+=1;
+				if(dinoWalk>30){dinoWalk=0;}
+				if(dinoWalk===0){
+				$(".block").empty();
+				$(".block").append('<img src="image/dinoWalk1.png" width="44" height="47"/>');
+				}
+				if(dinoWalk===15){
+				$(".block").empty();
+				$(".block").append('<img src="image/dinoWalk2.png" width="44" height="47"/>');
+				}
+				
+				
+	}
  
 
 function displayScoreText(){
@@ -113,12 +130,13 @@ function displayScoreText(){
 function dinoJump(){
 	"use strict";
 	if(spacebar===1){
-		t+=1;
-		if(dinoHeight===0||dinoHeight<0){dinoUpDown=1;}
-		if(dinoHeight===39||dinoHeight>40){dinoUpDown=-1;}
+		 t+=1;
+		if(t>100){t=0;spacebar=0;dinoHeight=0;} 
+		if(dinoHeight===0){dinoUpDown=1;}
+		if(dinoHeight===50){dinoUpDown=-1;}
 		dinoHeight+=dinoUpDown;
 		
-		if(t>77 ){t=0;spacebar=0;dinoHeight=0;} 
+		
 		
 		$(".block").css("bottom", dinoHeight);
 										 
@@ -127,18 +145,18 @@ function dinoJump(){
 function dinoKill(){
 	"use strict";
 		if(dinoHeight<10){ 
-					if(cactus0.left<25&&cactus0.left>15){stopGame=true;}
-					if(cactus1.left<25&&cactus1.left>15){stopGame=true;}
-					if(cactus2.left<25&&cactus2.left>15){stopGame=true;}
-					console.log("cactus0.left "+cactus0.left);
+					if(cactus0.left<30&&cactus0.left>15){stopGame=true;}
+					if(cactus1.left<30&&cactus1.left>15){stopGame=true;}
+					if(cactus2.left<30&&cactus2.left>15){stopGame=true;}
+					 
 								
 		}
 		if(stopGame){  
 					makeDinoExplode=true;
 					endOfGame();
-					console.log("StopGame vorher "+stopGame);
+					 
 					stopGame=false;
-					console.log("StopGame nachher "+stopGame);
+					 
 					startGame=false;
 					
 					 
@@ -186,9 +204,9 @@ function endOfGame(){
 	$(".VarValue").empty();
 	$(".VarValue").append("<center>"+"Click or press Spacebar to start again"+"</center>"); 
 	
-	cactusPosition0  =-20;
-	cactusPosition1  =-20;
-	cactusPosition2  =-20;
+	cactusPosition0  =-40;
+	cactusPosition1  =-40;
+	cactusPosition2  =-40;
 	$(".blockcactus0").css("right", cactusPosition0	);  
 	$(".blockcactus1").css("right", cactusPosition1	);  
 	$(".blockcactus2").css("right", cactusPosition2	);
