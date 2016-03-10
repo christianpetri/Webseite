@@ -15,34 +15,43 @@ var speed=1;
 var smallCubeClass=0;
 var smallCubeClassTimer=0;
 var makeDinoExplode=false;
+
 $(document).keydown(function(key) {
-				
+	"use strict";			
 		
 						if (key.keyCode === 32) {
 							startGame=true;
 							spacebar=1;
 							makeDinoExplode=false;										
 						}
+						
 				});
-
-
-
-	
 //Game start
 
 $(document).ready(function(){
-	"use strict";
 	
+	"use strict";
+	document.onselectstart = function(){return false;};
+    document.ondragstart = function(){return false;};
+
+		$(this).click(function(){
+				makeDinoExplode=false;
+				spacebar=1;
+				startGame=true;
+		
+			});
+		$(this).on({ 'touchstart' : function(){ 
+				makeDinoExplode=false;
+			    spacebar=1;
+				startGame=true;
+				
+					
+				} 
+		});
 		setInterval(function(){
 			
 				 
-		if(makeDinoExplode){
-				explodeDino();
-				showExplosion();	  	 
-			} else {
-				
-				hideExplosion(); 
-			}
+	
 				
 		if(startGame){ 	
 		
@@ -64,11 +73,21 @@ $(document).ready(function(){
 				//*Make dino Jump if spacbar is pressed (Timeout for Spacebar)*/
 				dinoJump();
 				
+				
 				//** If catus and dino are in the same place aka Dino touches cactus = End of Game/Dino dead*/
 				dinoKill();
 				
+				
+		
 			
 		} 
+		if(makeDinoExplode){
+			explodeDino();
+			showExplosion();	  	 
+		} else {
+			
+			hideExplosion(); 
+		}
 			
 	}, 10 );
    
@@ -110,17 +129,21 @@ function dinoKill(){
 		if(dinoHeight<10){ 
 					if(cactus0.left<25&&cactus0.left>15){stopGame=true;}
 					if(cactus1.left<25&&cactus1.left>15){stopGame=true;}
-					if(cactus2.left<25&&cactus2.left>15){stopGame=true;}			
+					if(cactus2.left<25&&cactus2.left>15){stopGame=true;}
+					console.log("cactus0.left "+cactus0.left);
+								
 		}
-		
 		if(stopGame){  
-					
-					endOfGame();
-					stopGame=false;
-					startGame=false;
 					makeDinoExplode=true;
+					endOfGame();
+					console.log("StopGame vorher "+stopGame);
+					stopGame=false;
+					console.log("StopGame nachher "+stopGame);
+					startGame=false;
+					
 					 
-		}
+				}
+		
 		
 }
  
@@ -160,33 +183,29 @@ function endOfGame(){
 	score=0;
 	$(".highScoreText").empty();
 	$(".highScoreText").append("Highscore: "+ highScore); 
-	
 	$(".VarValue").empty();
-	$(".VarValue").append("Press Spacebar to start again"); 
+	$(".VarValue").append("<center>"+"Click or press Spacebar to start again"+"</center>"); 
 	
 	cactusPosition0  =-20;
 	cactusPosition1  =-20;
 	cactusPosition2  =-20;
+	$(".blockcactus0").css("right", cactusPosition0	);  
+	$(".blockcactus1").css("right", cactusPosition1	);  
+	$(".blockcactus2").css("right", cactusPosition2	);
+	cactus0=$(".blockcactus0").position(); 
+	cactus1=$(".blockcactus1").position();
+	cactus2=$(".blockcactus2").position();
+	
+	
 	speed=1;
 }
 
 function explodeDino(){
 	"use strict"; 
 	var randomNumberColor=Math.floor(Math.random()*255);
-	 
 	smallCubeClassTimer+=1;
 				 
-	if(smallCubeClassTimer>100){
-			for(var i=1;i<100;i++){
-		 		var genrateSmallCubeClass=".smallCube"+[i];
-				$(genrateSmallCubeClass).css({	
-												"position":"absolute",
-												"left":"0px",
-												"top" : "0px"										 
-				});
-			}
-			smallCubeClassTimer=0;
-	}
+	
 	
 	smallCubeClass=".smallCube"+smallCubeClassTimer;
 				
@@ -198,6 +217,17 @@ function explodeDino(){
 							top: "-="+(Math.floor(Math.random()*300))
 						  
 		}, 500);
+		if(smallCubeClassTimer>100){
+			for(var i=0;i<100;i++){
+		 		var genrateSmallCubeClass=".smallCube"+[i];
+				$(genrateSmallCubeClass).css({	
+												"position":"absolute",
+												"left":"0px",
+												"top" : "0px"										 
+				});
+			}
+			smallCubeClassTimer=0;
+	}
 				 
 }
 
@@ -205,7 +235,7 @@ function explodeDino(){
 $(document).ready(function(){
 	"use strict"; 
 //generate 100 div with class .smallCube[i] (with height 10px widht 10px, positon absolute and top 0px)
-	for(var i=1;i<100;i++){
+	for(var i=0;i<100;i++){
 		
 		var genrateSmallCubeClass=".smallCube"+[i];
 		$(".explode").append('<div class="smallCube'+[i]+'" position="absolute" top="0px">'+'</div>');
@@ -224,8 +254,8 @@ $(document).ready(function(){
 });
 
 function showExplosion(){
-	
-	for(var a=1;a<100;a++){
+	"use strict"; 
+	for(var a=0;a<100;a++){
 						 
 								var genrateSmallCubeClass=".smallCube"+[a];
 									$(genrateSmallCubeClass).show();
@@ -234,7 +264,7 @@ function showExplosion(){
 }
 function hideExplosion(){
 	"use strict"; 
-	for(var i=1;i<100;i++){
+	for(var i=0;i<100;i++){
 						 
 								var genrateSmallCubeClass=".smallCube"+[i];
 									$(genrateSmallCubeClass).hide();
