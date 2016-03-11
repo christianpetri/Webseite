@@ -13,8 +13,8 @@ setInterval(function(){
 	if(ball.x>=300){ball.x=150;}
 	console.log(ball.x);
 	
-	//document.getElementById("ball").style.top=ball.x+"px";
-	document.getElementById("ball").style.right=ball.x+"px";
+	document.getElementById("ball").style.top=ball.x+"px";
+	document.getElementById("ball").style.left=ball.x+"px";
 	},300);
 
  
