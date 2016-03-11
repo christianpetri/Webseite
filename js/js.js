@@ -14,7 +14,8 @@ $(document).ready(function() {
 	/**NavMenu item Anfang*/
 	$("#menu").append(	'<a href="index.html">'+'Home'+'</a>'+' '+
 						'<a href="galerie.html">'+'Galerie'+'</a>'+' '+
-						'<a href="jump.html">'+'Jump'+'</a>'+
+						'<a href="jump.html">'+'Jump'+'</a>'+' '+
+						'<a href="purejavascript.html">'+'Pure JavaScript'+'</a>'+
 						'<div class="fixedbottom">'+'<a href="#top">'+"Zum Seiten-Anfang"+'</a>'+'</div>'
 	
 	);

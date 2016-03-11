@@ -1,0 +1,80 @@
+/* CSS Document */
+body{
+width:100%;
+max-width:800px;	
+margin:auto;
+ background-color: #F0F8FF;
+}
+
+#menu{
+left:30px;
+height:auto;
+width:auto;
+position:fixed;	
+background-color:lightblue;
+
+}
+ul{
+	list-style: none;
+	padding-left: 10px;
+	padding-right:10px
+}
+
+h1{ 
+padding:10px 10px 10px 10px;
+width:auto;
+height:auto;
+color:white;
+background-color: black;
+
+}
+.ponggame{
+ 
+position:relative;		
+margin:auto;
+padding:10px 10px 10px 10px;
+background-color:black;
+height:300px;
+width:700px;
+
+}
+.barleft{
+	
+	width: 10px;
+    height: 100px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+	background-color:white;
+	
+}
+.block {
+   
+    width: 10px;
+    height: 100px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+	background-color:white;
+}
+.barright{
+	
+	width:10px;
+	height:100px;
+	
+	position: absolute;
+	right:20px;
+	background-color:white;
+	
+}
+
+
+.centerline{
+	position:absolute;
+	width:5px;
+	right:50%;
+	left:50%;
+	height:inherit;
+	background-color:white;
+}
+

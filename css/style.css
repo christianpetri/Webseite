@@ -114,6 +114,7 @@ div.fixedbottom {
 	height:47px;
 	width:44px;
 	left:15px;
+	background-color:blue;
 	 
 }
  
@@ -141,18 +142,20 @@ div.fixedbottom {
 .blockcactus0{
 	position: absolute;
 	bottom:0px;
-	right:-30px;
+	right:-50px;
 	height:47px;
 	width:44px;
+	background-color:green;
 	 
 	
 	}
 .blockcactus1{
 	position: absolute;
 	bottom:0px;
-	right:-30px;
+	right:-50px;
 	height:47px;
 	width:44px;
+	background-color:green;
 	 
 	 
 	
@@ -160,9 +163,10 @@ div.fixedbottom {
 .blockcactus2{
 	position: absolute;
 	bottom:0px;
-	right:-30px;
+	right:-50px;
 	height:47px;
 	width:44px;
+	background-color:green;
 	 
 	 
 	
