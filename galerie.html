@@ -4,10 +4,13 @@
 <head>
 <title>Galerie</title>
 <link href="css/style.css" type="text/css" rel="stylesheet"/>
-
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+<link rel="stylesheet" type="text/css" href="css/tipso.css">
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
+<script src="js/tipso.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
+<script src="js/myfirstplugin.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 <script type="text/javascript" src="js/galerie.js"></script>
 <meta charset="UTF-8" />
 </head>
@@ -16,6 +19,14 @@
 <div class="topheight" id="top"></div>
 <div id="navi" class="fixedtop"><span id="menu"></span></div>
 <h1>Galerie</h1>
+<script>
+$(document).ready(function() {
+	"use strict";
+	$(".greencolor").greenify();
+	
+});
+</script>
+<div class="greencolor">Hello</div>
 
 <img src="image/image_1_small.jpg" alt="Licht" />
 <div class="fixedbottom"> <a href="#top">Zum Seiten-Anfang</a> </div>

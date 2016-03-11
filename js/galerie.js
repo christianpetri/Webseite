@@ -2,7 +2,7 @@ $(document).ready(
 
 	  function() { 
 		"use strict";
-		$("html").niceScroll();
+		
 		
 	  $( ".boxblue" )
 	  .mouseenter(function() {

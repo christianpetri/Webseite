@@ -2,7 +2,14 @@
 
 $(document).ready(function() {
 	"use strict";
-
+	 
+	$('.tipso').tipso();
+	$(".tipso_animate").tipso({
+		animationIn:'hinge',
+ 	 	animationOut: 'hinge'
+	});
+	$('.tipso').tipso();
+	$("html").niceScroll();
 	 
 	/**NavMenu item Anfang*/
 	$("#menu").append(	'<a href="index.html">'+'Home'+'</a>'+' '+
