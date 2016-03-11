@@ -2,18 +2,19 @@
 
 function game(){
 	"use strict";
-var ball={x:0,y:0};
+var ball={x:150,y:150};
 
  
 
 setInterval(function(){
 	
 		
-	ball.x+=1;
-	if(ball.x>100){ball.x=0;}
+	ball.x+=10;
+	if(ball.x>=300){ball.x=150;}
 	console.log(ball.x);
 	
-	document.getElementById("ball").style.top=ball.x+"px";
+	//document.getElementById("ball").style.top=ball.x+"px";
+	document.getElementById("ball").style.right=ball.x+"px";
 	},300);
 
  
