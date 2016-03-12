@@ -3,6 +3,8 @@ body{
 width:100%;
 max-width:800px;	
 margin:auto;
+padding-left:150px;
+padding-right:150px;
  background-color: #F0F8FF;
 }
 
@@ -83,9 +85,10 @@ width:700px;
 	height:10px;
 	
 	position: absolute;
-	left:348px;
+	left:350px;
 	top:150px;
-	background-color:red;
+	background-color:white;
+	
 	
 }
 
