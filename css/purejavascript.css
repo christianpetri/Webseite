@@ -45,7 +45,7 @@ width:700px;
 	width: 10px;
     height: 100px;
     position: absolute;
-    left: 10px;
+    left: 20px;
     top: 10px;
 	background-color:white;
 	
@@ -91,4 +91,5 @@ width:700px;
 	
 	
 }
+#moveupdown{height:100px}
 

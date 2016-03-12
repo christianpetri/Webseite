@@ -4,8 +4,10 @@ function game(){
 	"use strict";
 var ball={x:150,y:350};
 var dir={x:1,y:1};
+var bar={x1:1,x2:1,x3:1};
 
- 
+document.getElementById("moveupdown").style.top=10+"px";
+document.getElementById("moveupdown").style.height=100+"px";
 
 setInterval(function(){
 	
@@ -22,9 +24,13 @@ setInterval(function(){
 	
 	document.getElementById("ball").style.top=ball.x+"px";
 	document.getElementById("ball").style.left=ball.y+"px";
-	
-	move();
-	console.log((chr.updown()) + "px");
+	bar.x1=parseInt(document.getElementById("moveupdown").style.top);
+	bar.x2=parseInt(document.getElementById("moveupdown").style.top)+100;
+	bar.x3=document.getElementById("moveupdown").style.height;
+
+	//parseInt(a, 10)
+	console.log(bar);
+	document.getElementById("moveupdown").style.height=ball.x+"px";
 	},300);
 
  
@@ -33,6 +39,8 @@ setInterval(function(){
 
 function move(event) {
 	"use strict";
+	 
+	var top =  parseInt(document.getElementById('moveupdown').style.top);
     var key = event.keyCode,
         chrId = document.getElementById('moveupdown'),
         chr = {
@@ -55,6 +63,8 @@ function move(event) {
 
     chrId.style.top = (chr.updown()) + "px";
 	
+	console.log(document.getElementById('moveupdown').style.height);
+   
    
 }
 
