@@ -7,6 +7,7 @@ function game(){
 	var barLeft={x1:1,x2:1};
 	var barRight={x1:1,x2:1};
 	var restartGame=false;
+	var moveLeftBar=10;
 
 	document.getElementById("moveupdown").style.top=10+"px";
 	document.getElementById("moveupdown").style.height=100+"px";
@@ -31,10 +32,19 @@ function game(){
 		ball.y+=10*dir.y;
 		document.getElementById("ball").style.top=ball.x+"px";
 		document.getElementById("ball").style.left=ball.y+"px";
+		
 		//make computer move
-		if(ball.y>300){
-		document.getElementById("computer").style.top=ball.x+"px";
+		if(ball.y>400){
+			if(ball.x>200){document.getElementById("computer").style.top=200+"px";
+			}else{
+				document.getElementById("computer").style.top=ball.x+"px";
+			}
+		
+			if(dir.x>0){moveLeftBar+=10;}
+			if(dir.x<0){moveLeftBar-=10;}
 		}
+		moveLeftBar=ball.x;
+		document.getElementById("computer").style.top=moveLeftBar+"px";
 		
 		//get left and right bars positon to be able to create if statments
 		barLeft.x1=parseInt(document.getElementById("moveupdown").style.top);
@@ -91,7 +101,7 @@ function move(event) {
     chrId.style.top = (chr.updown()) + "px";
 	
 	//console.log(document.getElementById('moveupdown').style.height);
-	//console.log(heightBarLeft);
+	console.log("heightBarLeft= "+heightBarLeft);
    
    
 }
