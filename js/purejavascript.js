@@ -6,21 +6,24 @@ function game(){
 	var dir={x:1,y:1};
 	var barLeft={x1:1,x2:1};
 	var barRight={x1:1,x2:1};
-	var barRightCalc={x:1,y:1};
+	var barRightCalc=1;
 	var restartGame=false;
 	var moveLeftBar=10;
 
 	document.getElementById("moveupdown").style.top=10+"px";
 	document.getElementById("moveupdown").style.height=100+"px";
 	document.getElementById("computer").style.top=10+"px";
-	document.getElementById("computer").style.height=100+"px";
+	document.getElementById("computer").style.height=20+"px";
 
 	setInterval(function(){
 		//if ball touches upper or lower limit change direction
 		if(ball.x<=0){dir.x=1;}
 		if(ball.x>=290){dir.x=-1;}
 		//if ball touches the left or right boundery, restart game
-		if(ball.y<=0){restartGame=true;}
+		if(ball.y<=0){
+			dir.y=1;
+			//restartGame=true;
+			}
 		if(ball.y>=690){restartGame=true;}	
 		//after restart=true, reset ball to center and give it a random start direction
 		if(restartGame){
@@ -36,18 +39,15 @@ function game(){
 		
 		//make computer move
 		if(ball.y===400&&dir.y===+1){
-			if(dir.x===1){console.log(300-(310-(300-ball.x)));}
-			if(dir.x===-1){console.log(310-ball.x);}
+			if(dir.x===+1){barRightCalc=(310-ball.x);}
+			if(dir.x===-1){barRightCalc=(300-ball.x);}
 							
 		}
-		if(ball.y>400&&dir.y===+1){
-			if(dir.x===1){console.log(300-(310-(300-ball.x)));}
-			if(dir.x===-1){}
-			if(ball.x>200){document.getElementById("computer").style.top=200+"px";
-			}else{
-				moveLeftBar=ball.x;
-			}
-		
+		if(ball.y>400){
+			moveLeftBar=barRightCalc;
+			//if(ball.x>200){document.getElementById("computer").style.top=200+"px";
+			
+	
 				
 		}
 		
@@ -68,13 +68,14 @@ function game(){
 		//if the ball=the computer bar, game on
 		if(barRight.x1<=ball.x && barRight.x2>=ball.x&&ball.y===660){
 			dir.y=-1;
+			console.log(ball);
 		}
 		//parseInt(a, 10)
-		console.log(barRight);
-		console.log(ball);
+		//console.log(barRight);
+		//console.log(ball);
 		
 		
-	},150);
+	},100);
 
  
 
