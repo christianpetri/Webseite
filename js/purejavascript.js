@@ -59,7 +59,6 @@ function game(){
 			//document.getElementById("computer").style.top=moveLeftBar+"px";
 				if(ball.x<200){
 					document.getElementById("computer").style.top=ball.x+"px";
-					
 				}else{
 					document.getElementById("computer").style.top=200+"px";	
 				}

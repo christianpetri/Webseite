@@ -74,7 +74,7 @@ width:700px;
 .centerline{
 	position:absolute;
 	width:5px;
-	left:400px;
+	left:50%;
 	 
 	height:inherit;
 	background-color:white;
