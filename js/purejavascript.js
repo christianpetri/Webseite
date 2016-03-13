@@ -6,6 +6,7 @@ function game(){
 	var dir={x:1,y:1};
 	var barLeft={x1:1,x2:1};
 	var barRight={x1:1,x2:1};
+	var barRightCalc={x:1,y:1};
 	var restartGame=false;
 	var moveLeftBar=10;
 
@@ -34,16 +35,22 @@ function game(){
 		document.getElementById("ball").style.left=ball.y+"px";
 		
 		//make computer move
-		if(ball.y>400){
+		if(ball.y===400&&dir.y===+1){
+			if(dir.x===1){console.log(300-(310-(300-ball.x)));}
+			if(dir.x===-1){console.log(310-ball.x);}
+							
+		}
+		if(ball.y>400&&dir.y===+1){
+			if(dir.x===1){console.log(300-(310-(300-ball.x)));}
+			if(dir.x===-1){}
 			if(ball.x>200){document.getElementById("computer").style.top=200+"px";
 			}else{
-				document.getElementById("computer").style.top=ball.x+"px";
+				moveLeftBar=ball.x;
 			}
 		
-			if(dir.x>0){moveLeftBar+=10;}
-			if(dir.x<0){moveLeftBar-=10;}
+				
 		}
-		moveLeftBar=ball.x;
+		
 		document.getElementById("computer").style.top=moveLeftBar+"px";
 		
 		//get left and right bars positon to be able to create if statments
