@@ -2,23 +2,32 @@
 
 function game(){
 	"use strict";
-	var ball={x:150,y:350};
+	var ball={x:150,y:340};
 	var dir={x:1,y:1};
 	var barLeft={x1:1,x2:1};
 	var barRight={x1:1,x2:1};
 	var barRightCalc=1;
 	var restartGame=false;
 	var moveLeftBar=10;
+	var speedLeftBar=1;
+	var currentPositonLeftBar=0;
 
 	document.getElementById("moveupdown").style.top=10+"px";
 	document.getElementById("moveupdown").style.height=100+"px";
 	document.getElementById("computer").style.top=10+"px";
-	document.getElementById("computer").style.height=20+"px";
+	document.getElementById("computer").style.height=30+"px";
 
 	setInterval(function(){
+		
+		
+		
 		//if ball touches upper or lower limit change direction
-		if(ball.x<=0){dir.x=1;}
-		if(ball.x>=290){dir.x=-1;}
+		if(ball.x<=0){
+			dir.x=1;
+			}
+		if(ball.x>=290){
+			dir.x=-1;
+			}
 		//if ball touches the left or right boundery, restart game
 		if(ball.y<=0){
 			dir.y=1;
@@ -27,7 +36,7 @@ function game(){
 		if(ball.y>=690){restartGame=true;}	
 		//after restart=true, reset ball to center and give it a random start direction
 		if(restartGame){
-			ball={x:150,y:350};
+			ball={x:150,y:320};
 			dir.y=(-1 + Math.round(Math.random()) * 2);
 			restartGame=false;
 		}
@@ -36,22 +45,23 @@ function game(){
 		ball.y+=10*dir.y;
 		document.getElementById("ball").style.top=ball.x+"px";
 		document.getElementById("ball").style.left=ball.y+"px";
-		
 		//make computer move
-		if(ball.y===400&&dir.y===+1){
-			if(dir.x===+1){barRightCalc=(310-ball.x);}
-			if(dir.x===-1){barRightCalc=(300-ball.x);}
-							
+		if(ball.y===360&&dir.y===+1){
+			barRightCalc=(290-ball.x);
+			//if(dir.x===+1){}
+			//if(dir.x===-1){barRightCalc=(300-ball.x);}
+			currentPositonLeftBar=document.getElementById("computer").style.top;				
 		}
-		if(ball.y>400){
-			moveLeftBar=barRightCalc;
-			//if(ball.x>200){document.getElementById("computer").style.top=200+"px";
-			
-	
-				
+		if(ball.y>=350){
+			if(currentPositonLeftBar>=(barRightCalc-10)){moveLeftBar+=10;}
+			if(currentPositonLeftBar<=(barRightCalc-10)){moveLeftBar-=10;}
+			speedLeftBar=1;
+			//moveLeftBar=barRightCalc-10;
+			document.getElementById("computer").style.top=moveLeftBar+"px";
 		}
 		
-		document.getElementById("computer").style.top=moveLeftBar+"px";
+		
+		
 		
 		//get left and right bars positon to be able to create if statments
 		barLeft.x1=parseInt(document.getElementById("moveupdown").style.top);
@@ -60,7 +70,7 @@ function game(){
 					
 		barRight.x1=parseInt(document.getElementById("computer").style.top);
 		barRight.x2=		parseInt(document.getElementById("computer").style.top)+
-					parseInt(document.getElementById("computer").style.height);
+							parseInt(document.getElementById("computer").style.height);
 		//if the ball=my bar position, game on
 		if(barLeft.x1<=ball.x && barLeft.x2>=ball.x&&ball.y===30){
 			dir.y=1;
@@ -68,7 +78,6 @@ function game(){
 		//if the ball=the computer bar, game on
 		if(barRight.x1<=ball.x && barRight.x2>=ball.x&&ball.y===660){
 			dir.y=-1;
-			console.log(ball);
 		}
 		//parseInt(a, 10)
 		//console.log(barRight);
