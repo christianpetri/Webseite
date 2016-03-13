@@ -8,14 +8,14 @@ function game(){
 	var barRight={x1:1,x2:1};
 	var barRightCalc=1;
 	var restartGame=false;
-	var moveLeftBar=10;
+	var moveLeftBar=100;
 	var speedLeftBar=1;
 	var currentPositonLeftBar=0;
 
 	document.getElementById("moveupdown").style.top=10+"px";
 	document.getElementById("moveupdown").style.height=100+"px";
 	document.getElementById("computer").style.top=10+"px";
-	document.getElementById("computer").style.height=30+"px";
+	document.getElementById("computer").style.height=100+"px";
 
 	setInterval(function(){
 		
@@ -30,8 +30,8 @@ function game(){
 			}
 		//if ball touches the left or right boundery, restart game
 		if(ball.y<=0){
-			dir.y=1;
-			//restartGame=true;
+			//dir.y=1;
+			restartGame=true;
 			}
 		if(ball.y>=690){restartGame=true;}	
 		//after restart=true, reset ball to center and give it a random start direction
@@ -45,19 +45,31 @@ function game(){
 		ball.y+=10*dir.y;
 		document.getElementById("ball").style.top=ball.x+"px";
 		document.getElementById("ball").style.left=ball.y+"px";
+		
 		//make computer move
 		if(ball.y===360&&dir.y===+1){
 			barRightCalc=(290-ball.x);
 			//if(dir.x===+1){}
 			//if(dir.x===-1){barRightCalc=(300-ball.x);}
-			currentPositonLeftBar=document.getElementById("computer").style.top;				
+			currentPositonLeftBar=parseInt(document.getElementById("computer").style.top);				
 		}
-		if(ball.y>=350){
-			if(currentPositonLeftBar>=(barRightCalc-10)){moveLeftBar+=10;}
-			if(currentPositonLeftBar<=(barRightCalc-10)){moveLeftBar-=10;}
-			speedLeftBar=1;
+		
+		if(ball.y>=500&&dir.y===+1){
+			//if(ball.y>=630){moveLeftBar=barRightCalc-10;}
+			//document.getElementById("computer").style.top=moveLeftBar+"px";
+				if(ball.x<200){
+					document.getElementById("computer").style.top=ball.x+"px";
+					
+				}else{
+					document.getElementById("computer").style.top=200+"px";	
+				}
+			//console.log(currentPositonLeftBar);
+			//console.log((barRightCalc-10));
+			//speedLeftBar=1;
 			//moveLeftBar=barRightCalc-10;
-			document.getElementById("computer").style.top=moveLeftBar+"px";
+			//moveLeftBar+=10;
+			//if(moveLeftBar>300){moveLeftBar=10;}
+			
 		}
 		
 		
@@ -84,7 +96,7 @@ function game(){
 		//console.log(ball);
 		
 		
-	},100);
+	},50);
 
  
 
