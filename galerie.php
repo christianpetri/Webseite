@@ -1,5 +1,5 @@
 <?php include ("php/header.php");
-printHead("Kontaktseite für Beruf X");
+printHead("Galerie");
 ?>
 <div class="topheight" id="top"></div>
 <div id="navi" class="fixedtop"><span id="menu"></span></div>

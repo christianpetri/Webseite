@@ -1,21 +1,6 @@
-<!doctype html>
-<html>
-<head>
-<link href="css/style.css" type="text/css" rel="stylesheet"/>
-<link rel="stylesheet" type="text/css" href="css/animate.css">
-<link rel="stylesheet" type="text/css" href="css/tipso.css">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script src="js/tipso.js"></script>
-<script src="js/jquery.nicescroll.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
-<script type="text/javascript" src="js/jump-multi.js"></script>
-<meta charset="utf-8">
-<title>Jump</title>
-</head>
-
-<body>
-<div class="topheight" id="top"></div>  
-<div id="navi" class="fixedtop"><span id="menu"></span></div>
+<?php include ("php/header.php");
+printHead("Jump");
+?>
 <h1>Click or hit Spacebar to start</h1>
 <div class="containerText">
   <div class="scoreText"></div>
