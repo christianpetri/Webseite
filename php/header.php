@@ -15,16 +15,18 @@ function printHead($title){
 <script src="js/tipso.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
 <script type="text/javascript" src="js/js.js"></script>
+<script src="/js/myfirstplugin.js"></script>
+<script src="/js/jump-multi.js"></script>
 <meta charset="UTF-8" />
 </head>
 
 <body>
 <div class="topheight" id="top"></div>
 <div class="fixedtop" id="navi"><span id="menu">
-<a href="index.html">Home</a>
-<a href="galerie.html">Galerie</a>
-<a href="jump.html">Jump</a>
-<a href="purejavascript.html">Pure JavaScript</a></span></div>
+<a href="index.php">Home</a>
+<a href="galerie.php">Galerie</a>
+<a href="jump.php">Jump</a>
+<a href="purejavascript.php">Pure JavaScript</a></span></div>
 
 <div class="fixedbottom"><a href="#top">Zum Seiten-Anfang</a></div>
 

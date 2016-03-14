@@ -92,7 +92,7 @@ $(document).ready(function(){
 			hideExplosion(); 
 		}
 			
-	}, 10 );
+	}, 1  );
    
 });
 
