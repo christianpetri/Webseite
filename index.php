@@ -1,20 +1,7 @@
-<!DOCTYPE Html>
-<html>
-<head>
-<title>Kontaktformular zur Berwerbung des Berufs X</title>
-<link href="css/style.css" type="text/css" rel="stylesheet"/>
-<link rel="stylesheet" type="text/css" href="css/animate.css">
-<link rel="stylesheet" type="text/css" href="css/tipso.css">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script src="js/tipso.js"></script>
-<script src="js/jquery.nicescroll.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
-<meta charset="UTF-8" />
-</head>
+<?php include ("php/header.php");
+printHead("Kontaktseite für Beruf X");
+?>
 
-<body>
-<div class="topheight" id="top"></div>
-<div class="fixedtop" id="navi"><span id="menu"></span></div>
 <h1>Kontaktformular zur Berwerbung des Berufs X</h1>
 <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
   quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.<br/>

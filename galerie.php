@@ -1,23 +1,10 @@
-<!DOCTYPE Html>
-<html>
-
-<head>
-<title>Galerie</title>
-<link href="css/style.css" type="text/css" rel="stylesheet"/>
-<link rel="stylesheet" type="text/css" href="css/animate.css">
-<link rel="stylesheet" type="text/css" href="css/tipso.css">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script src="js/tipso.js"></script>
-<script src="js/jquery.nicescroll.js"></script>
-<script src="js/myfirstplugin.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
-<script type="text/javascript" src="js/galerie.js"></script>
-<meta charset="UTF-8" />
-</head>
-
-<body>
+<?php include ("php/header.php");
+printHead("Kontaktseite für Beruf X");
+?>
 <div class="topheight" id="top"></div>
 <div id="navi" class="fixedtop"><span id="menu"></span></div>
+<script src="js/myfirstplugin.js"></script>
+<script type="text/javascript" src="js/galerie.js"></script>
 <h1>Galerie</h1>
 <script>
 $(document).ready(function() {
