@@ -30,11 +30,15 @@ function printHead($title){
 <?php 
 function printNavigation($write_fixedtopnav_or_fixedbottomnav){
 ?>
-    <div class="<?php print $write_fixedtopnav_or_fixedbottomnav; ?>" id="navi"><span id="menu">
-    <a href="index.php">Home</a>
-    <a href="galerie.php">Galerie</a>
-    <a href="jump.php">Jump</a>
-    <a href="purejavascript.php">Pong</a></span></div>
+    <div class="<?php print $write_fixedtopnav_or_fixedbottomnav; ?>" id="navi">
+        <span id="menu">
+            <a href="index.php">Home</a>
+            <a href="galerie.php">Galerie</a>
+            <a href="jump.php">Jump</a>
+            <a href="purejavascript.php">Pong</a>
+            <a href="canvasproject/index.html">Canvas</a>
+        </span>
+    </div>
 <?php
 }
 ?>
