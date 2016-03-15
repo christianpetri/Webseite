@@ -1,6 +1,6 @@
 <?php include ("php/header.php");
 printHead("Kontaktseite für Beruf X");
-printNavigation("fixedtop");
+printNavigation("fixedtopnav");
 printNavigation("fixedbottomnav");
 ?>
 

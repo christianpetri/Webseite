@@ -22,8 +22,6 @@ function printHead($title){
 
 <body>
 <div class="topheight" id="top"></div>
-
-
 <div class="fixedbottom"><a href="#top">Zum Seiten-Anfang</a></div>
 
 <?php
@@ -36,7 +34,7 @@ function printNavigation($write_fixedtopnav_or_fixedbottomnav){
     <a href="index.php">Home</a>
     <a href="galerie.php">Galerie</a>
     <a href="jump.php">Jump</a>
-    <a href="purejavascript.php">Pure JavaScript</a></span></div>
+    <a href="purejavascript.php">Pong</a></span></div>
 <?php
 }
 ?>

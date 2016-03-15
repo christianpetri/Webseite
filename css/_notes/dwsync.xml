@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="style.css" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131022893507962502" remote="131024205600000000" Dst="1" />
-<file name="jquery-ui.css" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131022893500710408" remote="131024205600000000" Dst="1" />
-<file name="purejavascript.css" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131023601444876811" remote="131024204400000000" Dst="1" />
-<file name="animate.css" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131022893497048485" remote="131024205600000000" Dst="1" />
-<file name="avgrund.css" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131022893485688015" remote="131024205600000000" Dst="1" />
-<file name="tipso.css" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131022893506052398" remote="131024205600000000" Dst="1" />
-<file name="purejavascript.css" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131024418804446396" remote="131024151000000000" Dst="1" />
-<file name="style.css" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131024418804586492" remote="131024151000000000" Dst="1" />
-<file name="jquery-ui.css" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131024418804306297" remote="131024151000000000" Dst="1" />
-<file name="tipso.css" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131024418804706581" remote="131024151000000000" Dst="1" />
-<file name="avgrund.css" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131024418804136170" remote="131024151000000000" Dst="1" />
-<file name="animate.css" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131024418803986070" remote="131024151000000000" Dst="1" />
-<file name="style.css" server="C:/xampp/htdocs/christianpetri.ch/" local="131024418804586492" remote="131024418800000000" Dst="1" />
-<file name="animate.css" server="C:/xampp/htdocs/christianpetri.ch/" local="131024418803986070" remote="131024418800000000" Dst="1" />
-<file name="tipso.css" server="C:/xampp/htdocs/christianpetri.ch/" local="131024418804706581" remote="131024418800000000" Dst="1" />
-<file name="animate.css" server="C:/xampp/htdocs/kontakt.christianpetri.ch/" local="131022893497048485" remote="131022893490000000" Dst="1" />
-<file name="avgrund.css" server="C:/xampp/htdocs/kontakt.christianpetri.ch/" local="131022893485688015" remote="131022893480000000" Dst="1" />
-<file name="jquery-ui.css" server="C:/xampp/htdocs/kontakt.christianpetri.ch/" local="131022893500710408" remote="131022893500000000" Dst="1" />
-<file name="purejavascript.css" server="C:/xampp/htdocs/kontakt.christianpetri.ch/" local="131023601444876811" remote="131023601440000000" Dst="1" />
-<file name="style.css" server="C:/xampp/htdocs/kontakt.christianpetri.ch/" local="131022893507962502" remote="131022893500000000" Dst="1" />
-<file name="tipso.css" server="C:/xampp/htdocs/kontakt.christianpetri.ch/" local="131022893506052398" remote="131022893500000000" Dst="1" />
+<file name="style.css" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131022893507962502" remote="131021469600000000" Dst="1" />
+<file name="jquery-ui.css" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131022893500710408" remote="131019840000000000" Dst="1" />
+<file name="purejavascript.css" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131023601444876811" remote="131023313400000000" Dst="1" />
+<file name="animate.css" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131022893497048485" remote="131021236800000000" Dst="1" />
+<file name="avgrund.css" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131022893485688015" remote="131020623000000000" Dst="1" />
+<file name="tipso.css" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131022893506052398" remote="131021236800000000" Dst="1" />
+<file name="purejavascript.css" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009599884924" remote="131024742000000000" Dst="1" />
+<file name="style.css" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025127569124378" remote="131024844000000000" Dst="1" />
+<file name="jquery-ui.css" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009599854906" remote="131024742000000000" Dst="1" />
+<file name="tipso.css" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009599924962" remote="131024742000000000" Dst="1" />
+<file name="avgrund.css" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009599834892" remote="131024742000000000" Dst="1" />
+<file name="animate.css" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009599794864" remote="131024742000000000" Dst="1" />
+<file name="style.css" server="C:/xampp/htdocs/christianpetri.ch/" local="131025127569124378" remote="131025127560000000" Dst="1" />
+<file name="animate.css" server="C:/xampp/htdocs/christianpetri.ch/" local="131025009599794864" remote="131025009590000000" Dst="1" />
+<file name="tipso.css" server="C:/xampp/htdocs/christianpetri.ch/" local="131025009599924962" remote="131025009590000000" Dst="1" />
 </dwsync>

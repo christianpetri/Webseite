@@ -1,5 +1,7 @@
 <?php include ("php/header.php");
 printHead("Jump");
+printNavigation("fixedtopnav");
+printNavigation("fixedbottomnav");
 ?>
 <h1>Click or hit Spacebar to start</h1>
 <div class="containerText">

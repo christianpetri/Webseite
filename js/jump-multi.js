@@ -12,6 +12,7 @@ var t = 0;
 var startGame = false;
 var stopGame=false;
 var speed=1;
+var speedgame=10;
 var smallCubeClass=0;
 var smallCubeClassTimer=0;
 var makeDinoExplode=false;
@@ -62,8 +63,8 @@ $(document).ready(function(){
 				displayScoreText();
 						
 				//make game more difficult
-				 speed+= 0.0001;
-				
+				 if(speedgame>0.5){speedgame-= 0.001;}
+				 			
 				//*count up score*/
 				score+=0.01;
 				
@@ -92,7 +93,7 @@ $(document).ready(function(){
 			hideExplosion(); 
 		}
 			
-	}, 1  );
+	}, speedgame );
    
 });
 
@@ -212,7 +213,7 @@ function endOfGame(){
 	cactus1=$(".blockcactus1").position();
 	cactus2=$(".blockcactus2").position();
 	
-	
+	speedgame=10;
 	speed=1;
 }
 
