@@ -1,11 +1,12 @@
 <?php
-echo "
-	<form action='empfangen.php' method='POST'>
-	<p>Vorname: <input name='vorname' type='text'></input></p>
-	<p>Mail: <input name='mail' type='text'></input></p>
-	<input type='Submit' value='Versenden'></input>
-	</form>
-";
-
+function kontakt(){
+	echo " 
+		<form action='php/empfangen.php' method='POST' target='_blank'>
+		<p>Vorname: <input name='name' type='text'></input></p>
+		<p>Mail: <input name='email' type='text'></input></p>
+		<input type='Submit' value='Versenden'></input>
+		</form>
+	 	";
+}
 ?>
  

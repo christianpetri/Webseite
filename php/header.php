@@ -1,5 +1,5 @@
 
-	
+<?php include ("kontaktformular.php");?>	
 <?php 
 function printHead($title){
 ?>

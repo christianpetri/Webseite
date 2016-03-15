@@ -13,6 +13,8 @@ printNavigation("fixedbottomnav");
 <p><span class="tipso_animate" data-tipso-title="HELLO!" data-tipso="Me love cats">Hover over me TOO</span></p>
 
 <br/>
+<?php kontakt();?>
+</br>
 <p>Bei Intresse melden Sie sich bitte mit dem Formular</p>
 
 <!-- Nachricht Formular -->
