@@ -22,14 +22,21 @@ function printHead($title){
 
 <body>
 <div class="topheight" id="top"></div>
-<div class="fixedtop" id="navi"><span id="menu">
-<a href="index.php">Home</a>
-<a href="galerie.php">Galerie</a>
-<a href="jump.php">Jump</a>
-<a href="purejavascript.php">Pure JavaScript</a></span></div>
+
 
 <div class="fixedbottom"><a href="#top">Zum Seiten-Anfang</a></div>
 
+<?php
+}
+?>
+<?php 
+function printNavigation($write_fixedtopnav_or_fixedbottomnav){
+?>
+    <div class="<?php print $write_fixedtopnav_or_fixedbottomnav; ?>" id="navi"><span id="menu">
+    <a href="index.php">Home</a>
+    <a href="galerie.php">Galerie</a>
+    <a href="jump.php">Jump</a>
+    <a href="purejavascript.php">Pure JavaScript</a></span></div>
 <?php
 }
 ?>

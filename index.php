@@ -1,8 +1,10 @@
 <?php include ("php/header.php");
 printHead("Kontaktseite für Beruf X");
+printNavigation("fixedtop");
+printNavigation("fixedbottomnav");
 ?>
 
-<h1>Kontaktformular zur Berwerbung des Berufs X</h1>
+<h1>Kontaktformular</h1>
 <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
   quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.<br/>
 </p>
@@ -11,7 +13,7 @@ printHead("Kontaktseite für Beruf X");
 <p><span class="tipso_animate" data-tipso-title="HELLO!" data-tipso="Me love cats">Hover over me TOO</span></p>
 
 <br/>
-<p>Bei Intresse melden Sie sich bitte bei Herr ...</p>
+<p>Bei Intresse melden Sie sich bitte mit dem Formular</p>
 
 <!-- Nachricht Formular -->
 <div class="nachricht"> Vorname: <br/>

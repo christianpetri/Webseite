@@ -18,7 +18,7 @@ body {
   width: 795px;
 }
 img{width:100%;}
-
+a:hover{color:red;}
 
 table {
   border: 1;
@@ -60,6 +60,10 @@ input[type=text]:hover {
 div.fixedtop {
 	position: fixed;
     top: 0;    
+}
+div.fixedbottomnav {
+	position: fixed;
+    bottom: 0;    
 }
 
 div.fixedbottom {
