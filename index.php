@@ -11,29 +11,31 @@ printNavigation("fixedbottomnav");
 
 <p>Hover <span class="tipso" data-tipso-title="Hello!" data-tipso="I am the content">over me</span> to see tipso in action</p>
 <p><span class="tipso_animate" data-tipso-title="HELLO!" data-tipso="Me love cats">Hover over me TOO</span></p>
-
+<p>Hinterlassen Sie einen Kommentar</p>
 <br/>
 <?php kontakt();?>
+<p>Komnmentare zu dem Kommentar-Formular!!</p>
+<?php getComments(); ?>
 <br/>
-<p>Bei Intresse melden Sie sich bitte mit dem Formular</p>
 
-<!-- Nachricht Formular -->
-<div class="nachricht">
+
+<!-- Nachricht Formular
+<div class="nachricht2">
 <form>
  		Vorname: <br/>
-      	<input placeholder="Vorname" type="text" name="fname" required/>
+      	<input placeholder="Vorname" type="text" name="fname2" required/>
      	<br/>
      	Nachname: <br/>
-    	<input placeholder="Nachname" type="text" name="lname" required/>
+    	<input placeholder="Nachname" type="text" name="lname2" required/>
    	   	<br/>
       	Nachricht: <br/>
-      	<textarea rows="5" cols="40" placeholder="Nachricht" name="nachricht" required></textarea>
+      	<textarea rows="5" cols="40" placeholder="Nachricht" name="nachricht2" required></textarea>
       	<br/>
-      <!--Abschicken Knopf-->
+      
       <input class="button" type="submit" value="Abschicken" />
  </form>
 </div>
-<!-- Nachricht Formular Ende -->
+ Nachricht Formular Ende -->
 
 <div class="list"></div>
 <p>Christan</p>

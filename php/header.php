@@ -47,17 +47,17 @@ function kontakt(){
 		<form method='post' action='empfangen.php'>
         <table>
             <tr>
-                <td><input class="nachricht" name="fname" placeholder="Vorname" type="text" required/></td>
-                <td> <input class="nachricht" name="lname" placeholder="Nachname" type="text" required/> </td>
+                <td><input style="width:200px;max-width:200px;" class="nachricht" name="fname" placeholder="Vorname" type="text" required/></td>
+                <td><input style="width:200px;max-width:200px;" class="nachricht" name="lname" placeholder="Nachname" type="text" required/> </td>
                  
             </tr>
              </table>
              <table>
             <tr>
-            	 <td  ><input class="email" name="email" placeholder="E-Mail" type="email" required/></td> 
+            	 <td  ><input style="width:409px;" name="website" placeholder="Ihre Webseite" type="url"/></td> 
          	</tr>   
          	<tr>
-        		<td > <textarea class="nachricht" placeholder="Ihre Nachricht" name="nachricht" type="text" required></textarea> </td>
+        		<td > <textarea style="width:408px; min-height:150px;"  placeholder="Ihr Kommentar" name="nachricht" type="text" required></textarea> </td>
        		 </tr>
         	<tr>
 				<td><input   type="Submit" value="Versenden"/></td>
@@ -69,4 +69,34 @@ function kontakt(){
 <?php	 	
 }
 ?>
+<?php
+function getComments(){
 
+//access database
+$servername = "mysql.kontakt.christianpetri.ch";
+$username = "kontaktchristian";
+$password = "!Asperger!6815";
+$dbname = "kontaktchristianpetri";
+ 
+//check if table exists
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+ if ($conn->connect_errno) {
+	  die('Connect Error: ' . $conn->connect_errno);
+}
+//get data from database
+$sql = "SELECT fname, nachricht, datetime FROM kontaktformularhome";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+     // output data of each row
+     while($row = $result->fetch_assoc()) {
+         echo "<br/><b>". $row["fname"]. "</b> hat den Kommentar: <b>". $row["nachricht"]."</b> geschrieben um/am ".$row["datetime"];
+     }
+} else {
+     echo "0 results";
+}
+
+$conn->close();
+}
+?>
