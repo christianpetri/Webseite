@@ -14,21 +14,24 @@ printNavigation("fixedbottomnav");
 
 <br/>
 <?php kontakt();?>
-</br>
+<br/>
 <p>Bei Intresse melden Sie sich bitte mit dem Formular</p>
 
 <!-- Nachricht Formular -->
-<div class="nachricht"> Vorname: <br/>
-  <input placeholder="Vorname" type="text" name="fname" required>
-  <br/>
-  Nachname: <br/>
-  <input placeholder="Nachname" type="text" name="lname" required>
-  <br/>
-  Nachricht: <br/>
-  <textarea rows="5" cols="40" placeholder="Nachricht" name="nachricht" required></textarea>
-  <br/>
-  <!--Abschicken Knopf-->
-  <input class="button" type="submit" value="Abschicken" />
+<div class="nachricht">
+<form>
+ 		Vorname: <br/>
+      	<input placeholder="Vorname" type="text" name="fname" required/>
+     	<br/>
+     	Nachname: <br/>
+    	<input placeholder="Nachname" type="text" name="lname" required/>
+   	   	<br/>
+      	Nachricht: <br/>
+      	<textarea rows="5" cols="40" placeholder="Nachricht" name="nachricht" required></textarea>
+      	<br/>
+      <!--Abschicken Knopf-->
+      <input class="button" type="submit" value="Abschicken" />
+ </form>
 </div>
 <!-- Nachricht Formular Ende -->
 

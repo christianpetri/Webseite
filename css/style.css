@@ -196,3 +196,11 @@ div.fixedbottom {
 	 /*background-color:grey;*/
 	}
 	 
+table.nachricht{width:500px;}
+input.nachricht{width:200px;max-width:200px;}
+input.email{
+	width:410px;	
+}
+textarea.nachricht{
+width:410px;
+min-height:150px;}

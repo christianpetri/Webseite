@@ -1,5 +1,3 @@
-
-<?php include ("kontaktformular.php");?>	
 <?php 
 function printHead($title){
 ?>
@@ -30,7 +28,7 @@ function printHead($title){
 <?php 
 function printNavigation($write_fixedtopnav_or_fixedbottomnav){
 ?>
-    <div class="<?php print $write_fixedtopnav_or_fixedbottomnav; ?>" id="navi">
+    <div id="navi" class="<?php print $write_fixedtopnav_or_fixedbottomnav; ?>">
         <span id="menu">
             <a href="index.php">Home</a>
             <a href="galerie.php">Galerie</a>
@@ -42,3 +40,33 @@ function printNavigation($write_fixedtopnav_or_fixedbottomnav){
 <?php
 }
 ?>
+<?php
+function kontakt(){
+?>
+	
+		<form method='post' action='empfangen.php'>
+        <table>
+            <tr>
+                <td><input class="nachricht" name="fname" placeholder="Vorname" type="text" required/></td>
+                <td> <input class="nachricht" name="lname" placeholder="Nachname" type="text" required/> </td>
+                 
+            </tr>
+             </table>
+             <table>
+            <tr>
+            	 <td  ><input class="email" name="email" placeholder="E-Mail" type="email" required/></td> 
+         	</tr>   
+         	<tr>
+        		<td > <textarea class="nachricht" placeholder="Ihre Nachricht" name="nachricht" type="text" required></textarea> </td>
+       		 </tr>
+        	<tr>
+				<td><input   type="Submit" value="Versenden"/></td>
+        	</tr>
+        </table>
+		</form>
+        
+	
+<?php	 	
+}
+?>
+
