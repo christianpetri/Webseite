@@ -77,3 +77,6 @@ if ($result->num_rows > 0) {
 $conn->close();
 }
 ?>
+<?php
+function footer(){print "</body></html>";}
+?>
