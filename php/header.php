@@ -1,3 +1,4 @@
+<?php include ("config.php");?>
 <?php 
 function printHead($title){
 ?>
@@ -73,11 +74,8 @@ function kontakt(){
 function getComments(){
 
 //access database
-$servername = "mysql.kontakt.christianpetri.ch";
-$username = "kontaktchristian";
-$password = "!Asperger!6815";
-$dbname = "kontaktchristianpetri";
- 
+
+ connectMySQL();
 //check if table exists
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -91,7 +89,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
-         echo "<br/><b>". $row["fname"]. "</b> hat den Kommentar: <b>". $row["nachricht"]."</b> geschrieben um/am ".$row["datetime"];
+         echo "<br/><b>". htmlspecialchars($row["fname"]). "</b> hat den Kommentar: <b>". htmlspecialchars($row["nachricht"])."</b> geschrieben um/am ".$row["datetime"];
      }
 } else {
      echo "0 results";
