@@ -1,13 +1,19 @@
 <?php include ("php/header.php");
 printHead("Nachricht empfangen");
 printNavigation("fixedtopnav");
+
 ?>
 
 <?php 
 
 
 //access database
-connectMySQL();
+
+	$servername = "mysql.kontakt.christianpetri.ch";
+	$username = "kontaktchristian";
+	$password = "!Asperger!6815";
+	$dbname = "kontaktchristianpetri";
+
  
 //check if table exists
 $conn = new mysqli($servername, $username, $password, $dbname);

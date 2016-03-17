@@ -1,4 +1,3 @@
-<?php include ("config.php");?>
 <?php 
 function printHead($title){
 ?>
@@ -7,15 +6,15 @@ function printHead($title){
 <html>
 <head>
 <title><?php print $title;?></title>
-<link href="css/style.css" type="text/css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="css/animate.css">
 <link rel="stylesheet" type="text/css" href="css/tipso.css">
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script src="js/tipso.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
 <script type="text/javascript" src="js/js.js"></script>
 <script src="/js/myfirstplugin.js"></script>
-<script src="/js/jump-multi.js"></script>
+
 <meta charset="UTF-8" />
 </head>
 
@@ -26,6 +25,7 @@ function printHead($title){
 <?php
 }
 ?>
+
 <?php 
 function printNavigation($write_fixedtopnav_or_fixedbottomnav){
 ?>
@@ -41,41 +41,20 @@ function printNavigation($write_fixedtopnav_or_fixedbottomnav){
 <?php
 }
 ?>
-<?php
-function kontakt(){
-?>
-	
-		<form method='post' action='empfangen.php'>
-        <table>
-            <tr>
-                <td><input style="width:200px;max-width:200px;" class="nachricht" name="fname" placeholder="Vorname" type="text" required/></td>
-                <td><input style="width:200px;max-width:200px;" class="nachricht" name="lname" placeholder="Nachname" type="text" required/> </td>
-                 
-            </tr>
-             </table>
-             <table>
-            <tr>
-            	 <td  ><input style="width:409px;" name="website" placeholder="Ihre Webseite" type="url"/></td> 
-         	</tr>   
-         	<tr>
-        		<td > <textarea style="width:408px; min-height:150px;"  placeholder="Ihr Kommentar" name="nachricht" type="text" required></textarea> </td>
-       		 </tr>
-        	<tr>
-				<td><input   type="Submit" value="Versenden"/></td>
-        	</tr>
-        </table>
-		</form>
-        
-	
-<?php	 	
-}
-?>
+
+ 
+
 <?php
 function getComments(){
 
 //access database
 
- connectMySQL();
+$servername = "mysql.kontakt.christianpetri.ch";
+$username = "kontaktchristian";
+$password = "!Asperger!6815";
+$dbname = "kontaktchristianpetri";
+
+
 //check if table exists
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -89,7 +68,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
-         echo "<br/><b>". htmlspecialchars($row["fname"]). "</b> hat den Kommentar: <b>". htmlspecialchars($row["nachricht"])."</b> geschrieben um/am ".$row["datetime"];
+         echo "<br/><b>".  $row["fname"]. "</b> hat den Kommentar: <b>". $row["nachricht"]."</b> geschrieben um/am ".$row["datetime"];
      }
 } else {
      echo "0 results";

@@ -3,10 +3,11 @@ printHead("Jump");
 printNavigation("fixedtopnav");
 printNavigation("fixedbottomnav");
 ?>
+<script src="/js/jump-multi.js"></script>
 <h1>Click or hit Spacebar to start</h1>
 <div class="containerText">
   <div class="scoreText"></div>
-    <div class="highScoreText"></div>
+    <div class="highScoreText"></div> 
 </div>
 
 <div class="gamecanvas">

@@ -4,6 +4,7 @@ body {
   max-width:800px;
   margin: auto;
   background-color: #F0F8FF;
+  min-height:350px;
 }
  
 #navi {
@@ -187,14 +188,24 @@ div.fixedbottom {
 		
 		}
 	
-	.explode{
+.explode{
 	 position: absolute;
 	 bottom:0px;
 	 left:15px;
 	 width:10px;
 	 height:10px;
 	 /*background-color:grey;*/
-	}
-	 
- 
+}
 
+/*style for message*/ 
+input.nachricht{
+ 	width:200px; 	 
+}
+
+input.webseite{
+	width:409px;	
+}
+textarea.nachrichtext{
+	width:408px;
+ 	min-height:150px;
+ }
