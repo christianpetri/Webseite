@@ -40,10 +40,10 @@ printNavigation("fixedbottomnav");
 <h1>Registrieren</h1>
 
 <form id="regnewuser" method='post' action="usernew.php">
-		<input type="text" name="username" placeholder="Benutername"required/>
+		<input type="text" name="username" placeholder="Benutername" value="<?php echo htmlspecialchars($_GET["username"]); ?>" required/>
     </br>
-		<input id="fname" type="text" name="fname" placeholder="Vorname" required/>
-		<input type="text" name="lname" placeholder="Nachname" required/>
+		<input id="fname" type="text" name="fname" placeholder="Vorname" value="<?php echo htmlspecialchars($_GET["fname"]); ?>" required/>
+		<input type="text" name="lname" placeholder="Nachname" value="<?php echo htmlspecialchars($_GET["lname"]); ?>" required/>
     </br> 
     
     	<input id="firstpass" type="password" name="password1" placeholder="Passwort" required/>

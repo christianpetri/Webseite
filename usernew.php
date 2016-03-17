@@ -1,22 +1,23 @@
- <?php include ("php/header.php");
-printHead("User");
-printNavigation("fixedtopnav");
-printNavigation("fixedbottomnav");
-?>
-
 <?php 
 $username	=htmlspecialchars($_POST["username"])	;
 $fname		=htmlspecialchars($_POST["fname"])		;
 $lname		=htmlspecialchars($_POST["lname"])		;
-$password	=htmlspecialchars($_POST["password"])	;
+$password1	=md5($_POST["password1"])	;
+$password2	=md5($_POST["password2"])	;
 $passcheck = false;
-if((isset($_POST["password"]))===(isset($_POST["password2"]))){
+$hello123=false;
+if($hello123===false){$hello123=true;}
+if($hello123){
+	header("Location:http://www.kontakt.christianpetri.ch/user.php?"."username=".$username."&fname=".$fname."&lname=".$lname);} 
+/*
+if((isset($_POST["password1"]))&&(isset($_POST["password2"]))){
 	 
-		$passcheck=true;
-	 
+		if($password2===$password2){
+				$passcheck=true;
+	 	}
 }
 
-if(isset($_POST["username"])&&isset($_POST["fname"])&&isset($_POST["lname"])&&isset($_POST["password"])){
+if(isset($_POST["username"])&&isset($_POST["fname"])&&isset($_POST["lname"])&&isset($_POST["password1"])&&$passcheck&&false){
 	//access database
 	
 		$servername = "mysql.kontakt.christianpetri.ch";
@@ -28,7 +29,7 @@ if(isset($_POST["username"])&&isset($_POST["fname"])&&isset($_POST["lname"])&&is
 	//check if table exists
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
-	 if ($conn->connect_errno) {
+	 if($conn->connect_errno){
 		  die('Connect Error: ' . $conn->connect_errno);
 	}
 	
@@ -39,54 +40,25 @@ if(isset($_POST["username"])&&isset($_POST["fname"])&&isset($_POST["lname"])&&is
 	$username	=htmlspecialchars($_POST["username"])	;
 	$fname		=htmlspecialchars($_POST["fname"])		;
 	$lname		=htmlspecialchars($_POST["lname"])		;
-	$password	=htmlspecialchars($_POST["password"])	;
+	$password	=md5			($_POST["password1"])	;
 	$stmt->execute();
-	echo "<h1>Erfolgreich Registriert</h1>";
- 
-	echo "<p>"."Danke, ".$fname." ".$lname." für die Registrierung des Benutzername ".$username."</p>";
-	echo "<br/>"."<p>".$nachricht."</p>";
-	
+		
 	$stmt->close();
 	$conn->close();
-	
+	//$url="http://www.kontakt.christianpetri.ch/userloggedin.php";
+	//header('Location:$url');
+	//exit;
 } else {
-	echo "<h1>Bitte</h1>";
-	//$stayhere
+	*/
 	
-}
+	
+//}
 
 ?>
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method='post'>
-	<input type="text" name="username" placeholder="Benutername" value="<?php echo $fname;?>"> 
-    <span><?php 
-		if((isset($_POST["username"])	=== false	)){	echo	" * noch Benutzername einfügen ";		} 
-	?> </span>
-    </br>
-	<input type="text" name="fname" placeholder="Vorname">
-	<input type="text" name="lname" placeholder="Nachname">
-     <span><?php 
-		if((isset($_POST["fname"])		=== false	)){	echo	" * noch Vorname einfügen ";			} 
-		if((isset($_POST["lname"])		=== false	)){	echo	" * noch Nachname einfügen ";			}  
-	?> </span>
-    </br> 
-    
-    <input type="password" name="password" placeholder="Passwort">
-    <input type="password" name="password2" placeholder="Passwort wiederholen">
-    <span><?php 
-		if((isset($_POST["password"])	=== false	)){	echo	" *noch Passwort einfügen ";			
-		}elseif($passcheck===false){ 
-			 echo	" Passwoerter stimmen nicht ueberein";	
-		}	
-	?> </span>
-    </br>
-    <input type="submit" placeholder="Abschicken"/>
-
-
-</form>
 
 
 
 
 
-<?php footer();?>
+ 
