@@ -30,17 +30,28 @@ printNavigation("fixedbottomnav");
 </script>
 
 <h1>Login</h1>
-<form 	action="userloggedin.php" method='post'>
+<form 	action="userlogin.php" method='post'>
 
-	<input placeholder="Benutername" name="username" required/>
-    <input 	placeholder="Passwort" name="password" type="password" required/>
-    <input type="submit"/ value="Einloggen">
+	<input placeholder="Benutername" name="username" value="<?php if(isset($_GET["username1"])){echo htmlspecialchars($_GET["username1"]);} ?>"required/>
+    <input 	placeholder="Passwort" name="password1" type="password" required/>
+    <input type="submit"/ value="Einloggen"/><span>
+		<?php 
+			if(isset($_GET["username1"])){ 
+			echo " Bitte Passwort &uuml;berpr&uuml;fen";
+			} 
+			if(isset($_GET["username2"])){ 
+			echo " Benutzername: ".htmlspecialchars($_GET["username2"])." existiert nicht, bitte registrieren.";
+			}
+		?>
+    </span>
 </form>
 
 <h1>Registrieren</h1>
 
 <form id="regnewuser" method='post' action="usernew.php">
 		<input type="text" name="username" placeholder="Benutername" value="<?php echo htmlspecialchars($_GET["username"]); ?>" required/>
+  <span><?php $userexists=$_GET["userexists"];
+  	 if($userexists){echo "Benutzername bereits vergeben! Bitte &auml;ndern!";} ?> </span>
     </br>
 		<input id="fname" type="text" name="fname" placeholder="Vorname" value="<?php echo htmlspecialchars($_GET["fname"]); ?>" required/>
 		<input type="text" name="lname" placeholder="Nachname" value="<?php echo htmlspecialchars($_GET["lname"]); ?>" required/>

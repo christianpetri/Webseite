@@ -1,7 +1,7 @@
+
 <?php 
 function printHead($title){
 ?>
-
 <!DOCTYPE Html>
 <html>
 <head>
@@ -35,7 +35,17 @@ function printNavigation($write_fixedtopnav_or_fixedbottomnav){
             <a href="galerie.php">Galerie</a>
             <a href="jump.php">Jump</a>
             <a href="purejavascript.php">Pong</a>
-            <a href="canvasproject/index.html">Canvas</a>
+            <a href="canvasproject/index.html">Canvas</a> 
+            
+            <?php 
+			
+				if(isset($_SESSION["fname"])){echo '<a href="userlogout.php">Abmelden</a>';
+				}else{
+					echo '<a href="user.php">Anmelden</a>';
+				}
+		
+			?>
+             
         </span>
     </div>
 <?php
