@@ -15,23 +15,25 @@ printNavigation("fixedbottomnav");
 	 function checkPasswordMatch(){
 		var firstpass=$("#firstpass").val();
 		var secondpass=$("#secondpass").val();
-		
-		if(firstpass===secondpass){
-		
-			 	$("#checkTwoValues").html("&#10004");
-			    $("#ckeckPass").html('<input type="submit" placeholder="Abschicken"/>');
-		} else {
-			if((firstpass.length>0)&&(secondpass.length>0)){
-			 	$("#checkTwoValues").html("&#10008");
+		if(firstpass.length>0&&secondpass.length>0){
+			if((firstpass===secondpass)){
+			
+					$("#checkTwoValues").html("&#10004");
+					$("#ckeckPass").html('<input type="submit" placeholder="Abschicken"/>');
+			} else {
+					$("#checkTwoValues").html("&#10008");
+					$("#ckeckPass").html('<input type="submit" disabled="disabled" placeholder="Abschicken"/>');
+			} 
+		}else {
+				$("#checkTwoValues").empty();
 				$("#ckeckPass").html('<input type="submit" disabled="disabled" placeholder="Abschicken"/>');
-			}
-		} 
+		}
 	}
 </script>
 
 <h1>Login</h1>
 <form 	action="userlogin.php" method='post'>
-
+	<input type="hidden" name="user" value="login"/>
 	<input placeholder="Benutername" name="username" value="<?php if(isset($_GET["username1"])){echo htmlspecialchars($_GET["username1"]);} ?>"required/>
     <input 	placeholder="Passwort" name="password1" type="password" required/>
     <input type="submit"/ value="Einloggen"/><span>

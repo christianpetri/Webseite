@@ -10,22 +10,24 @@ printNavigation("fixedbottomnav");
 	
 		$("#firstpass").keyup(checkPasswordMatch);
 		$('#secondpass').keyup(checkPasswordMatch);
-		$("#ckeckPass").html('<input type="submit" disabled="disabled" value="Passwort &auml;ndern"/>');	 
+		$("#ckeckPass").html('<input type="submit" disabled="disabled" placeholder="Abschicken"/>');	 
 	});
 	 function checkPasswordMatch(){
 		var firstpass=$("#firstpass").val();
 		var secondpass=$("#secondpass").val();
-		
-		if(firstpass===secondpass){
-		
-			 	$("#checkTwoValues").html("&#10004");
-			    $("#ckeckPass").html('<input type="submit" value="Passwort &auml;ndern"/>');
-		} else {
-			if((firstpass.length>0)&&(secondpass.length>0)){
-			 	$("#checkTwoValues").html("&#10008");
-				$("#ckeckPass").html('<input type="submit" disabled="disabled" value="Passwort &auml;ndern"/>');
-			}
-		} 
+		if(firstpass.length>0&&secondpass.length>0){
+			if((firstpass===secondpass)){
+			
+					$("#checkTwoValues").html("&#10004");
+					$("#ckeckPass").html('<input type="submit" placeholder="Abschicken"/>');
+			} else {
+					$("#checkTwoValues").html("&#10008");
+					$("#ckeckPass").html('<input type="submit" disabled="disabled" placeholder="Abschicken"/>');
+			} 
+		}else {
+				$("#checkTwoValues").empty();
+				$("#ckeckPass").html('<input type="submit" disabled="disabled" placeholder="Abschicken"/>');
+		}
 	}
 </script>
 <h1>Eingeloggt</h1>
