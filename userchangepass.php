@@ -5,10 +5,11 @@ $passold=md5($_POST["passwordold"]);
 $passnew1=md5($_POST["passwordnew1"]);
 $passnew2=md5($_POST["passwordnew2"]);
 $end=false;
+$end1=false;
 $passcheck = false;
 $success=false;
 
-if((isset($_POST["password1"]))&&(isset($_POST["password2"]))){
+if((isset($_POST["passwordnew1"]))&&(isset($_POST["passwordnew2"]))){
 	 
 		if($password2===$password2){
 				$passcheck=true;
@@ -30,14 +31,25 @@ if(isset($_POST["passwordold"])&&$passcheck){
 	 if($conn->connect_errno){
 		  die('Connect Error: ' . $conn->connect_errno);
 	}
-	$sql="UPDATE userdata SET password='$passnew1' WHERE username='$username'" ;
- if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
-	}  
- 
-	$conn->close();
-	$end=true;
-	 
+	//check if password is vlaid
+	$sql1 = "SELECT password FROM userdata WHERE password='$passold'";
+	$result1 = $conn->query($sql1);
+	if(($result1->num_rows)>0){
+		/*password exists*/
+		 
+		$sql="UPDATE userdata SET password='$passnew1' WHERE username='$username'" ;
+		 /*	if ($conn->query($sql) === TRUE) {
+				echo "Record updated successfully";
+			} */ 
+		$conn->query($sql); 
+		$conn->close();
+		$end=true;
+			 
+	} else {
+		$conn->close();
+		$end1=true;
+	}
 }
-if($end){header("Location:http://www.kontakt.christianpetri.ch/userloggedin.php?"."userchange="."1");}
+if($end){header("Location:http://www.kontakt.christianpetri.ch/userloggedin.php?"."userpasschange="."1");}
+if($end1){header("Location:http://www.kontakt.christianpetri.ch/userloggedin.php?"."userpasschange="."2");}
 ?>

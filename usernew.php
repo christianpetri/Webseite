@@ -4,15 +4,7 @@ session_start();
 // remove all session variables
 session_unset(); 
  
-?>
-?>
-<?php
-// Set session variables
  
- 
- 
-?>
-<?php 
 $username	=htmlspecialchars($_POST["username"])	;
 $fname		=htmlspecialchars($_POST["fname"])		;
 $lname		=htmlspecialchars($_POST["lname"])		;

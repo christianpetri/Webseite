@@ -51,7 +51,7 @@ printNavigation("fixedbottomnav");
             </div>
 	</div>
 </form>
-<form action="userchangepass.php" method="post"></form>
+<form action="userchangepass.php" method="post"> 
     Passwort aktuell :
     </br>
     <input name="passwordold" type="password" required/>  
@@ -70,6 +70,13 @@ printNavigation("fixedbottomnav");
 </form> 
 </br>
 <?php if(isset($_GET["userchange"])){echo "Erfolgreich! Neu: ".$_SESSION["fname"]." ".$_SESSION["lname"];} ?>
+<?php 
+if(isset($_GET["userpasschange"])){
+	if(($_GET["userpasschange"])==1){echo "Erfolgreich! Neues Passwort";}
+	if(($_GET["userpasschange"])==2){echo "Falsches aktuelles Passwort!";}
+}
+?>
+ 
 <?php 
 
 /*

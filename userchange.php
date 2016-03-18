@@ -22,10 +22,8 @@ if(isset($_POST["fname"])&&isset($_POST["lname"])){
 		  die('Connect Error: ' . $conn->connect_errno);
 	}
 	$sql="UPDATE userdata SET fname='$fname', lname='$lname' WHERE username='$username'" ;
-	/* if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
-	} */
- 
+	 //if ($conn->query($sql) === TRUE) { echo "Record updated successfully";	} 
+ 	$conn->query($sql);
 	$conn->close();
 	$end=true;
 	 
