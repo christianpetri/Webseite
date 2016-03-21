@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="favicon.gif" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131022894343497316" remote="131019288000000000" Dst="1" />
-<file name="favicon.ico" server="ftp.christianpetri.ch//kontakt.christianpetri.ch/" local="131022894352711738" remote="131019288000000000" Dst="1" />
 <file name="index.php" server="C:/xampp/htdocs/christianpetri.ch/" local="131026775035008253" remote="131026775030000000" Dst="1" />
-<file name="favicon.gif" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009599995005" remote="131024851200000000" Dst="1" />
-<file name="favicon.ico" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009600005021" remote="131024851200000000" Dst="1" />
 <file name="galerie.php" server="C:/xampp/htdocs/christianpetri.ch/" local="131025138543367797" remote="131025138540000000" Dst="1" />
 <file name="galerie.php" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025138543367797" remote="131024850000000000" Dst="1" />
 <file name="index.php" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131026775035008253" remote="131026486200000000" Dst="1" />
@@ -27,4 +24,8 @@
 <file name="userlogout.php" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131027752082406876" remote="131027587200000000" Dst="1" />
 <file name="userchangepass.php" server="C:/xampp/htdocs/christianpetri.ch/" local="131027796145649309" remote="131027796140000000" Dst="1" />
 <file name="userchangepass.php" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131027796145649309" remote="131027507400000000" Dst="1" />
+<file name="favicon.ico" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131030192446441615" remote="131029903800000000" Dst="1" />
+<file name="favicon.gif" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131030193644502004" remote="131024851200000000" Dst="1" />
+<file name="logintoserver.php" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131030193683195630" remote="131029545600000000" Dst="1" />
+<file name="logintoserver.php" server="C:/xampp/htdocs/christianpetri.ch/" local="131030218992144109" remote="131030218990000000" Dst="1" />
 </dwsync>
