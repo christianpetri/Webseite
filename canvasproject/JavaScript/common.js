@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	"use strict";
-var u=1; //change rotation direction and speed  
+var u=0.01; //change rotation direction and speed  
 //eg "-1,-0,5,0.5,1, 120"
 var r=200; //size of the cube TRY 50,100
 
@@ -29,11 +29,9 @@ var p2,q2;
 var p3,q3;
 function sin($sin){
 	return Math.sin($sin);
-	 
 }
 function cos($cos){
-	return Math.cos($cos);
-	 
+	return Math.cos($cos); 
 }
 function line($x1,$y1,$x2,$y2){
 	 ctx.beginPath();
@@ -45,20 +43,22 @@ function line($x1,$y1,$x2,$y2){
 function rect($x,$y,$h,$w){
 	ctx.beginPath();
     ctx.rect($x, $y, $h, $w);
-    ctx.stroke();
+	ctx.fillStyle="rgba( 0 , 0, 0,0.1)";
+    ctx.fill();
 }
 function stroke($r,$g,$b){
 	ctx.strokeStyle = ($r,$g,$b);
 	ctx.stroke();
-	}
+}
 function ellipse($x,$y,$w,$h){
 	$h=$w;
 	ctx.beginPath();
-	ctx.arc($x,$y, $w, 0, 2*Math.PI);
+	ctx.arc($x,$y, $w/10, 0, 2*Math.PI);
+	 ctx.strokeStyle = 'white';
 	ctx.stroke();
 }
 function fill($r,$g,$b,$a){
-	ctx.fillStyle = ($r,$g,$b,$a);
+	ctx.fillStyle ="rgba("+$r+","+$g+","+$b+","+$a+")";
 	ctx.fill();
 }
 
@@ -69,31 +69,32 @@ function fill($r,$g,$b,$a){
 
 setInterval(function() {
 	
- 
+ stroke(255, 255, 255);
 	
 	
 	
 	
     a+=u;
-    x=sin(a)*r+xi; z=cos(a)*r+zi;
-    x1=sin(a+90)*r+xi;z1=cos(a+90)*r+zi;
-    x2=sin(a+180)*r+xi;z2=cos(a+180)*r+zi;
-    x3=sin(a+270)*r+xi;z3=cos(a+270)*r+zi;
+    x	=sin(a + 0		)*r+xi; 	z=	cos(a + 0	)*r+zi;
+    x1	=sin(a + 90		)*r+xi;		z1=	cos(a + 90	)*r+zi;
+    x2	=sin(a + 180	)*r+xi;		z2=	cos(a + 180	)*r+zi;
+    x3	=sin(a + 270	)*r+xi;		z3=	cos(a + 270	)*r+zi;
 
-p=x+z/n;    
-q=400-y-z/n;
+p=x+z/n; q=400-y-z/n;
 
-p1=x1+z1/n; 
-q1=400-y1-z1/n;
+p1=x1+z1/n; q1=400-y1-z1/n;
 
-p2=x2+z2/n; 
-q2=400-y2-z2/n;
+p2=x2+z2/n; q2=400-y2-z2/n;
 
-p3=x3+z3/n; 
-q3=400-y3-z3/n;
+p3=x3+z3/n; q3=400-y3-z3/n;
     
-    //ellipse(xi,r,10,10);ellipse(xi,400-r,10,10);ellipse(p,q,10,10);ellipse(p1,q1,10,10);ellipse(p2,q2,10,10);ellipse(p3,q3,10,10);
-    
+    ellipse(xi,r,10,10);
+	ellipse(xi,400-r,10,10);
+	ellipse(p,q,10,10);
+	ellipse(p1,q1,10,10);
+	ellipse(p2,q2,10,10);
+	ellipse(p3,q3,10,10);
+     
     line(xi,200-r,p,q);
     line(xi,200-r,p1,q1);
     line(xi,200-r,p2,q2);
@@ -111,33 +112,29 @@ q3=400-y3-z3/n;
     
     t+=1;
     if(t>1){
-		fill(255, 0, 0, 10);
+		 
+		rect(0, 0, 400, 400);
+		
+		rect(0, 0, 400, 400);
+		rect(0, 0, 400, 400);
+		rect(0, 0, 400, 400);
+		
+		rect(0, 0, 400, 400);
+		rect(0, 0, 400, 400);
+		rect(0, 0, 400, 400);
 		rect(0, 0, 400, 400);
 		/*
 		rect(0, 0, 400, 400);
-		
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		  
 		rect(0, 0, 400, 400);
 		rect(0, 0, 400, 400);
 		rect(0, 0, 400, 400);
 		rect(0, 0, 400, 400);
 		rect(0, 0, 400, 400);
 		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		*/
-		fill(0, 0, 0, 10);
-		 
-		stroke(255, 255, 255);
-		
+		 */
 		t=0;
  	}
 	if(a>3610){a=0;}
- }, 1000);
+ }, 10);
  
 });
