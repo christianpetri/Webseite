@@ -1,4 +1,3 @@
-
 <?php 
 function cleanBeforeInput($data){
 	$data=trim($data);
