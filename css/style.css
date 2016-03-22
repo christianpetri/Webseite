@@ -118,7 +118,7 @@ div.fixedbottom {
 	height:47px;
 	width:44px;
 	left:15px;
-	background-color:blue;
+	 
 	 
 }
  
@@ -149,7 +149,7 @@ div.fixedbottom {
 	right:-50px;
 	height:47px;
 	width:44px;
-	background-color:green;
+	 
 	 
 	
 	}
@@ -159,7 +159,6 @@ div.fixedbottom {
 	right:-50px;
 	height:47px;
 	width:44px;
-	background-color:green;
 	 
 	 
 	
@@ -170,11 +169,8 @@ div.fixedbottom {
 	right:-50px;
 	height:47px;
 	width:44px;
-	background-color:green;
 	 
-	 
-	
-	}
+}
 	.VarValue{ 
 		position: absolute;
 		left: 0;
@@ -209,3 +205,29 @@ textarea.nachrichtext{
 	width:408px;
  	min-height:150px;
  }
+#dinostart{
+	width:50px;
+	height:50px;
+	background:url(../image/dino_christian_sprite.png) 0 0;
+}
+#dinowalk1{
+	width:50px;
+	height:47px;
+	background:url(../image/dino_christian_sprite.png) 50px 0;
+	}
+#dinowalk2{	
+	width:50px;
+	height:47px;
+	background:url(../image/dino_christian_sprite.png) 100px 0;}
+#cactus1{	
+	width:50px;
+	height:47px;
+	background:url(../image/dino_christian_sprite.png) 0 50px;}
+#cactus2{	
+	width:50px;
+	height:47px;
+	background:url(../image/dino_christian_sprite.png) 50px 50px;}
+#cactus3{	
+	width:50px;
+	height:47px;
+	background:url(../image/dino_christian_sprite.png) 100px 50px;}

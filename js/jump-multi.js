@@ -33,9 +33,8 @@ $(document).keydown(function(key) {
 $(document).ready(function(){
 	
 	"use strict";
-	//$(".block").append('<img src="image/dino_Start.png" width="44" height="47"/>');	
-	document.onselectstart = function(){return false;};
-    document.ondragstart = function(){return false;};
+	$(".block").append('<img id="dinostart" src="image/transparent.gif" />');	
+	 
 
 		$(this).click(function(){
 				makeDinoExplode=false;
@@ -102,12 +101,12 @@ function dinoMove(){
 				dinoWalk+=1;
 				if(dinoWalk>30){dinoWalk=0;}
 				if(dinoWalk===0){
-				//$(".block").empty();
-				//$(".block").append('<img src="image/dinoWalk1.png" width="44" height="47"/>');
+				$(".block").empty();
+				$(".block").append('<img id="dinowalk1" src="image/transparent.gif" />');
 				}
 				if(dinoWalk===15){
-				//$(".block").empty();
-				//$(".block").append('<img src="image/dinoWalk2.png" width="44" height="47"/>');
+				$(".block").empty();
+				$(".block").append('<img id="dinowalk2" src="image/transparent.gif" />');
 				}
 				
 				

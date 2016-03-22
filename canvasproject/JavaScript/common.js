@@ -9,7 +9,7 @@ function draw(){
 
 var u=1; //change rotation direction and speed  
 //eg "-1,-0,5,0.5,1, 120"
-var r=200; //size of the cube TRY 50,100
+var r=180; //size of the cube TRY 50,100
 
 //change size
  $(".numberr").html(r);
@@ -27,12 +27,8 @@ var x=200, y=200,z=0;
 var x1=200,y1=200,z1=0;
 var x2=200,y2=200,z2=0;
 var x3=200,y3=200,z3=0;
-/* 
-var xi=x,yi=y,zi=z;
-var x1i=x1,y1i=y1,z1i=z1;
-var x2i=x2,y2i=y2,z2i=z2;
-var x3i=x3,y3i=y3,z3i=z3;
-*/
+
+
 var xi=x,zi=z;
 
 var p,q;
@@ -129,24 +125,19 @@ q3=	(400-y3)-(z3/n);
     t+=1;
     if(t>1){
 		 
-		rect(0, 0, 400, 400);
+		rect(-10, -10, 450, 450);
 		
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
+		rect(-10, -10, 450, 450);
+		rect(-10, -10, 450, 450);
+		rect(-10, -10, 450, 450);
 		
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
+		rect(-10, -10, 450, 450);
+		rect(-10, -10, 450, 450);
 		/*
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
-		rect(0, 0, 400, 400);
+		rect(-10, -10, 450, 450);
+		rect(-10, -10, 450, 450);
+		
+		
 		 */
 		t=0;
  	}

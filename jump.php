@@ -12,9 +12,9 @@ printNavigation("fixedbottomnav");
 
 <div class="gamecanvas">
 	
-	<div class="blockcactus0"><!--<img src="image/cactus.png" width="44" height="47" alt=""/>--></div>
-    <div class="blockcactus1"><!--<img src="image/cactus.png" width="44" height="47" alt=""/>--></div>
-    <div class="blockcactus2"><!--<img src="image/cactus.png" width="44" height="47" alt=""/>--></div>
+	<div class="blockcactus0"> 	<img id="cactus1" src="image/transparent.gif"/>	<!--<img src="image/cactus.png" width="44" height="47" alt=""/>-->	</div>
+    <div class="blockcactus1">	<img id="cactus2" src="image/transparent.gif"/>	<!--<img src="image/cactus.png" width="44" height="47" alt=""/>-->	</div>
+    <div class="blockcactus2">	<img id="cactus3" src="image/transparent.gif"/>	<!--<img src="image/cactus.png" width="44" height="47" alt=""/>-->	</div>
     <div class="block"></div>
     <div class="left"></div>
 	<div class="right"></div>

@@ -24,7 +24,7 @@
 <file name="jquery.complexify.js" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009600365262" remote="131024850600000000" Dst="1" />
 <file name="jquery-ui.min.js" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009600275202" remote="131024850600000000" Dst="1" />
 <file name="jquery.nicescroll.js" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009600455325" remote="131024844000000000" Dst="1" />
-<file name="jump-multi.js" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025055152867162" remote="131024766600000000" Dst="1" />
+<file name="jump-multi.js" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131031079421802925" remote="131030790600000000" Dst="1" />
 <file name="myfirstplugin.js" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009600565405" remote="131024743800000000" Dst="1" />
 <file name="purejavascript.js" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009600575412" remote="131024743800000000" Dst="1" />
 <file name="tipso.js" server="ftp.christianpetri.ch/kontakt.christianpetri.ch/" local="131025009600595423" remote="131024844000000000" Dst="1" />
@@ -34,5 +34,12 @@
 <file name="js.js" server="C:/xampp/htdocs/christianpetri.ch/" local="131026135951763564" remote="131026135950000000" Dst="1" />
 <file name="myfirstplugin.js" server="C:/xampp/htdocs/christianpetri.ch/" local="131025009600565405" remote="131025009600000000" Dst="1" />
 <file name="galerie.js" server="C:/xampp/htdocs/christianpetri.ch/" local="131025009600245180" remote="131025009600000000" Dst="1" />
-<file name="jump-multi.js" server="C:/xampp/htdocs/christianpetri.ch/" local="131024418807358456" remote="131024418800000000" Dst="1" />
+<file name="jump-multi.js" server="C:/xampp/htdocs/christianpetri.ch/" local="131031079421802925" remote="131031079420000000" Dst="1" />
+<file name="effect-explode.js" server="C:/xampp/htdocs/christianpetri.ch/" local="131025009600225166" remote="131025009600000000" Dst="1" />
+<file name="jquery-ui.min.js" server="C:/xampp/htdocs/christianpetri.ch/" local="131025009600275202" remote="131025009600000000" Dst="1" />
+<file name="jquery.avgrund.js" server="C:/xampp/htdocs/christianpetri.ch/" local="131025009600315226" remote="131025009600000000" Dst="1" />
+<file name="jquery.complexify.banlist.js" server="C:/xampp/htdocs/christianpetri.ch/" local="131025009600345251" remote="131025009600000000" Dst="1" />
+<file name="jquery.complexify.js" server="C:/xampp/htdocs/christianpetri.ch/" local="131025009600365262" remote="131025009600000000" Dst="1" />
+<file name="jump.js" server="C:/xampp/htdocs/christianpetri.ch/" local="131025009600545391" remote="131025009600000000" Dst="1" />
+<file name="purejavascript.js" server="C:/xampp/htdocs/christianpetri.ch/" local="131025009600575412" remote="131025009600000000" Dst="1" />
 </dwsync>
