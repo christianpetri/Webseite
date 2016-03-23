@@ -51,7 +51,7 @@ function line($x1,$y1,$x2,$y2){
 function rect($x,$y,$h,$w){
 	ctx.beginPath();
     ctx.rect($x, $y, $h, $w);
-	ctx.fillStyle="rgba( 0 , 0, 0,0.05)";
+	ctx.fillStyle="rgba( 0 , 0, 0,0.2)";
     ctx.fill();
 }
 function stroke($r,$g,$b){
@@ -123,17 +123,17 @@ q3=	(400-y3)-(z3/n);
     line(p3,q3,p,q);
    
     t+=1;
-    if(t>1){
+    if(t>2){
 		 
 		rect(-10, -10, 450, 450);
-		
-		rect(-10, -10, 450, 450);
-		rect(-10, -10, 450, 450);
-		rect(-10, -10, 450, 450);
-		
-		rect(-10, -10, 450, 450);
-		rect(-10, -10, 450, 450);
 		/*
+		rect(-10, -10, 450, 450);
+		rect(-10, -10, 450, 450);
+		rect(-10, -10, 450, 450);
+		
+		rect(-10, -10, 450, 450);
+		rect(-10, -10, 450, 450);
+		
 		rect(-10, -10, 450, 450);
 		rect(-10, -10, 450, 450);
 		
