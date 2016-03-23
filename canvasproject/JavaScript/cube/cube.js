@@ -41,49 +41,50 @@ var scene = new THREE.Scene();
 			
 			 
 			//add spot light yellow
-			var spotLight2 = new THREE.SpotLight( 0xFFDF4F, 1 );
-			spotLight2.position.set( 0, 100, 0 );
-			spotLight2.castShadow = true;
+			var spotLight2 = new THREE.PointLight(   0xffffff, 1, 1 );
+			spotLight2.position.set( 0, 5, 0 );
+			 
 			spotLight2.shadowDarkness = -1;
-			//scene.add( spotLight2 );
+			scene.add( spotLight2 );
 			 
 			
 			//scene.add   Light grey
-			var light = new THREE.PointLight( 0xffffff, 1, 50 );
-			light.position.set( 0, 0, 5 );
-			//scene.add( light );
+			var light = new THREE.PointLight( 0xffffff, 0.5, 50 );
+			light.position.set( 0, 2, 3 );
+			scene.add( light );
 			
 			
-			//red
-			var bulbGeometry1 = new THREE.SphereGeometry( 0.2, 16, 8 );
-			var light1 = new THREE.PointLight( "rgb(255,0,0)", 1, 100, 1);
-			var	bulbMat1 = new THREE.MeshStandardMaterial( {
-					emissive: "rgb(255,0,0)",
-					emissiveIntensity: 1,
-					color: "rgb(255,0,0)"
-				});
-			light1.add( new THREE.Mesh( bulbGeometry1, bulbMat1 ) );
-			light1.position.set( 0, 2, 0 );
-			light1.castShadow = true;
-			scene.add( light1 );
+			//LightBulb red
+				var bulbGeometry1 = new THREE.SphereGeometry( 0.2, 16, 8 );
+				var light1 = new THREE.PointLight( "rgb(255,0,0)", 1, 100, 1);
+					var	bulbMat1 = new THREE.MeshStandardMaterial( {
+						emissive: "rgb(255,0,0)",
+						emissiveIntensity: 1,
+						color: "rgb(255,0,0)"
+					});
+				light1.add( new THREE.Mesh( bulbGeometry1, bulbMat1 ) );
+				light1.position.set( 0, 2, 0 );
+				light1.castShadow = true;
+				scene.add( light1 );
+			 //Light Bulb red end
 			 
-			 //LightBulb
+			 //LightBulb white
 				var bulbGeometry = new THREE.SphereGeometry( 0.2, 16, 8 );
 				var  bulbLight = new THREE.PointLight( 0xffee88, 1, 100, 1 );
-				var	bulbMat = new THREE.MeshStandardMaterial( {
-					emissive: 0xffffee,
-					emissiveIntensity: 1,
-					color: 0x000000
-				});
+					var	bulbMat = new THREE.MeshStandardMaterial( {
+						emissive: 0xffffee,
+						emissiveIntensity: 1,
+						color: 0x000000
+					});
 				bulbLight.add( new THREE.Mesh( bulbGeometry, bulbMat ) );
 				bulbLight.position.set( 0, 2, 0 );
 				bulbLight.castShadow = true;
 				scene.add( bulbLight );
 			 
-			 //Light Bulb end
+			 //Light Bulb white end
 			 
 			//Add ambient Light
-			var lighta = new THREE.AmbientLight( 0x404040 ); // soft white light
+				var lighta = new THREE.AmbientLight( 0x404040 ); // soft white light
 				scene.add( lighta );
 			//end
 				 
@@ -98,9 +99,7 @@ var scene = new THREE.Scene();
 				 cube.rotation.y  = 1;
 				light1.position.set( Math.sin((x*180/Math.PI)/3)*3, Math.cos((x*180/Math.PI)/3)*3,0 ); 
 				bulbLight.position.set( Math.sin(x*180/Math.PI)*3, 0, Math.cos(x*180/Math.PI)*3); 
-			 //cube2.position.x=Math.sin((x*180/Math.PI)/3)*3;
-			 //cube2.position.y=Math.cos((x*180/Math.PI)/3)*3;
-				
+			  
 				x+=0.0005;
 				if(x>400){x=0;}
 				renderer.render(scene, camera);
