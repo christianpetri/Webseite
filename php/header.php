@@ -34,7 +34,7 @@ function printNavigation($write_fixedtopnav_or_fixedbottomnav){
             <a href="galerie.php">Galerie</a>
             <a href="jump.php">Jump</a>
             <a href="purejavascript.php">Pong</a>
-            <a href="canvasproject/index.php">Canvas</a> 
+            <a href="canvasproject/">canvasprojects</a> 
             
             <?php 
 			

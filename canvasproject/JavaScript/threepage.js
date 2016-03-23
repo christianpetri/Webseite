@@ -14,8 +14,8 @@ $(document).ready(function() {
 			var  geometry,material;
 			
 		    var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-			camera.position.z = 10;
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight,0.1, 1000  );
+			camera.position.z = 100;
 			
 			var renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
@@ -33,10 +33,10 @@ $(document).ready(function() {
 			//make cube
 			 
 			
-			geometry = new THREE.OctahedronGeometry(10, 0);
+			geometry = new THREE.OctahedronGeometry(60, 0);
 			material = new THREE.MeshBasicMaterial( { wireframe: true, wireframeLinewidth: 1 } );
 			var cube1 = new THREE.Mesh( geometry, material );
-			cube1.scale.x = cube1.scale.y = cube1.scale.z = 0.60;
+			//cube1.scale.x = cube1.scale.y = cube1.scale.z = 0.60;
 			cube1.rotation.x =0.1;
 			//cube1.rotation.z =0;
 			//cube1.rotation.y = 0.79;
@@ -55,7 +55,7 @@ $(document).ready(function() {
 			var render = function () {
 				requestAnimationFrame( render );
 
-				 cube1.rotation.y -= 0.05;
+				 cube1.rotation.y -= 0.03;
 				//cube1.rotation.y += 0.1;
 				
 				renderer.render(scene, camera);
