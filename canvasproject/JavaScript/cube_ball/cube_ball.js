@@ -25,7 +25,7 @@ $(document).ready(function(){
 		
 		
 		    var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 100, window.innerWidth/window.innerHeight, 0.1, 1000 );
+			var camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 0.1, 1000 );
 			
 			var renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
@@ -66,20 +66,16 @@ $(document).ready(function(){
 			scene.add( line ); 
 			
 			//add line1
-			material = new THREE.LineBasicMaterial({
-					color: "rgb(255,255,255)"
-				});
-				
-				geometry = new THREE.Geometry();
-				geometry.vertices.push(					  
-					new THREE.Vector3( 0, 0, 0 ),
-					new THREE.Vector3( 0, 0, 0 )
-				);
-
+			material = new THREE.LineBasicMaterial({ color: "rgb(255,255,255)"});
+			geometry = new THREE.Geometry();
+			geometry.vertices.push(					  
+				new THREE.Vector3( 0, 0, 0 ),
+				new THREE.Vector3( 0, 0, 0 )
+			);
 			var line1 = new THREE.Line( geometry, material );
 			scene.add( line1 );
 			
-			//add line1
+			//add line2
 			material = new THREE.LineBasicMaterial({
 					color: "rgb(255,255,255)"
 				});
@@ -92,6 +88,39 @@ $(document).ready(function(){
 
 			var line2 = new THREE.Line( geometry, material );
 			scene.add( line2 );
+			
+			//add line3
+			material = new THREE.LineBasicMaterial({
+					color: "rgb(255,255,255)"
+				});
+				
+				geometry = new THREE.Geometry();
+				geometry.vertices.push(					  
+					new THREE.Vector3( 0, 0, 0 ),
+					new THREE.Vector3( 0, 0, 0 ),
+					new THREE.Vector3( 0, 0, 0 ),
+					new THREE.Vector3( 0, 0, 0 )
+				);
+
+			var line3 = new THREE.Line( geometry, material );
+			scene.add( line3 );
+			
+			//add plane
+			geometry = new THREE.PlaneGeometry( 10, 10 );
+			material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+			var plane = new THREE.Mesh( geometry, material );
+			//scene.add( plane );
+			
+			//add sphere
+				//add plane
+			
+			geometry = new THREE.SphereGeometry(0.2, 10 ,5);
+			material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+			var sphere = new THREE.Mesh( geometry, material );
+			//sphere.position.z=30;
+			scene.add( sphere );
+		 
+		 
 
 			var render = function () {
 				requestAnimationFrame( render );
@@ -114,34 +143,48 @@ $(document).ready(function(){
 				//if(t===1){mouseVector.setX((t*20));}
 				//line.position.x=mouseX/10;
 				line.geometry.verticesNeedUpdate = true;
-				line.geometry.vertices[ 1 ].x =mouseX/ratioX;  
-				line.geometry.vertices[ 1 ].y =mouseY/ratioY;  
+				
+				//make vector that follows the mouse coordinates
+				line.geometry.vertices[ 1 ].x =(mouseX/ratioX);  
+				line.geometry.vertices[ 1 ].y =(mouseY/ratioY);  
 				line.geometry.vertices[ 1 ].z =49;
 				
-				 //mouseVector = new THREE.Vector3( mouseX/10, mouseY/10, 0 );
-				//cube1.position.x=mouseX/10;
-				//cube1.position.y=mouseY/10;
-				cube1.position.z=-49;
-				
-				cube.rotation.y = mouseX/1000;
-				cube.rotation.x= (mouseY*-1/1000) ;
-				
+				 
+				cube1.position.z=0;
+			
 				camera.position.z=50;
-				
-				
-				var lineA = line.geometry.vertices[ 1 ];
-				var b = new THREE.Vector3(0,1,0);
-
-				var c = new THREE.Vector3();
-				c.crossVectors( lineA, b );
 				
 				line1.geometry.verticesNeedUpdate = true;
 				line2.geometry.verticesNeedUpdate = true;
-				line1.geometry.vertices[ 1 ]=c;
+				line3.geometry.verticesNeedUpdate = true;
 				
-				var crossLine1Line2 = new THREE.Vector3();
-				crossLine1Line2.crossVectors(lineA,c);
-				line2.geometry.vertices[ 1 ]=crossLine1Line2;
+				var lineA = line.geometry.vertices[ 1 ];
+				var b = new THREE.Vector3(0,1,0);
+				var c = new THREE.Vector3();
+				c.crossVectors( lineA, b );
+				line1.geometry.vertices[ 1 ]=c.setLength ( 5 );
+				
+				var crossLine2andd = new THREE.Vector3();
+				var d = new THREE.Vector3(1,0,0);
+				crossLine2andd.crossVectors(lineA,d);
+				line2.geometry.vertices[ 1 ]=crossLine2andd.setLength ( 5 );
+				 
+				//line3.geometry.vertices[ 1 ]=c;  
+				//line3.geometry.vertices[ 2 ] =crossLine2andd;  
+				//line3.geometry.vertices[ 3 ] =-1*c;
+				
+				//http://idflood.github.io/ThreeNodes.js/index_optimized.html#example/text1.json
+				//http://stackoverflow.com/questions/23033589/three-js-shape-fill-color
+				//x and y for ball
+				var ballZ= line.geometry.vertices[ 1 ].z/10;
+				sphere.position.z= ballZ;
+				var xAxis= new THREE.Vector3(1,0,0);
+				var angleToZAxis = line.geometry.vertices[ 1 ].angleTo(xAxis);
+				cube.rotation.y = -angleToZAxis;
+				var yAxis= new THREE.Vector3(0,1,0);
+				var angleToYAxis=line.geometry.vertices[ 1 ].angleTo(yAxis);
+				cube.rotation.z= -angleToYAxis ;
+				
 				
 				
 				renderer.render(scene, camera);
@@ -153,8 +196,7 @@ $(document).ready(function(){
     	
 			$(".mouseCoordinates").html("<p> mouseX: "+mouseX+" "+" mouseY: "+mouseY*-1+"width= "+
 				width.toFixed(2)+" camera.fov= "+camera.fov+"   x="+c.x+" y="+c.y+" z="+c.z.toFixed(2) +" "+
-				"line.geometry.vertices[ 1 ].x "+line.geometry.vertices[ 1 ].x.toFixed(2)
-				+"</p>");
+				"line.geometry.vertices[ 1 ].z= "+line1.geometry.vertices[ 1 ].z.toFixed(2)+"</p>");
 			};
 
 			render();
